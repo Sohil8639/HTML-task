@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup_Page</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #ade;
+            padding: 20px;
+        }
+        fieldset{
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        legend{
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            padding-bottom: 10px;
+        }
+        label{
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="password"]{
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid #ccc;         
+            margin: 0 auto;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        input[type='submit']{
+            width: 100%;
+            background-color: #ade ;
+            color: #555;
+            font-weight: bold;
+            border-radius: 4px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        input[type='submit']:hover{
+            background-color: rgb(121, 206, 235);
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend><h2>Signup</h2></legend>
+            
+            <label for="fname">First Name :</label>
+            &nbsp;&nbsp;&nbsp; 
+            <input type="text" id="fname" name="First Name" required title="Please Enter Your First Name">
+            <br><br>
+            <label for="sname">Second Name :</label>
+            <input type="text" id="sname" name="Second Name">
+            <br><br>
+            <label for="email">Email Id :</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+            <input type="text" id="email" name="Email l̥Id" required title="Please Enter Email-Id" pattern="^[a-z0-9]+@[a-z0-9](?:[a-z0-9-]{0,61})(?:\.l̥[a-z](?:[a-z]{0,61})?)*$">
+            <br><br>
+            <label for="mb">Mobile No. :</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+            <input type="text" id="mb" name="Mobile" required title="Please Enter your 10 digits Mobile Number" pattern="^(\+\d{1,3}[- ]?)?\d{10}$">
+            <br><br>
+            <label for="pwd">Password :</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <input type="password" id="pwd" name="Password" required title="Minimum eight characters, at least one uppercase letter, one lowercase letter, one symbol and one number" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$">
+            <br><br>
+            <label for="cpwd">Confirm Password :</label>
+            <input type="password" name="Confirm password" id="cpwd" required>
+            <br><br>
+            <div>
+                <input type="submit" Value="Signup" formaction="login.html">
+                <br><br>
+                <input type="submit" Value="Already have an account ?" formaction="login.html">
+            </div>
+        
+        </fieldset>
+        
+
+    </form>
+</body>
+</html>
