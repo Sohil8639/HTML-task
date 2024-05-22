@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex_properties</title>
+    <style> 
+        #main {
+          width: 504px;
+          height: 525px;
+          border: 1px solid black;
+          /* display: flex; */
+          /* flex-flow: column-reverse wrap; */
+          /* align-items: center; */
+          /* justify-content: center; */
+        
+        }
+        
+        #fb{
+          border: 1px solid black;
+          height: 100px;
+          width: 502px;
+          background-color: orange ;
+          display: flex;
+          flex-flow: row wrap;
+          align-items: center;
+          justify-content: end;
+          gap: 2px;
+        }
+        #fb div{
+          font-style: italic;
+          width: 50px;
+          height: 30px;
+          display: flex;
+          
+        }
+        #fb img{
+          
+          height: 80%;
+          padding-right: 40%;
+          
+        }
+        #sb{
+          border: 1px solid black;
+          height: 300px;
+          width: 500px;
+          display: flex; 
+          flex-flow: column wrap;
+        }
+        #sb1{
+          border: 1px solid red;
+          background-color: red;
+          width: 150px;
+          height: 300px; 
+        }
+        #sb1 h3{
+          font-size: larger;
+          font-weight: bolder;
+          font-style: oblique;
+        }
+        #sb1 p{
+          padding-left: 4px;
+          font-size: small;
+          font-style:italic;
+        }
+        #sb2{
+          border: 1px solid black;
+          background-color: yellow;
+          width: 350px;
+          height: 300px;
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: space-around;
+        }
+        #sb2 div{
+          padding-top: 10px;
+          padding-left: 10px;
+        }
+        #tb{
+          border: 1px solid blue;
+          background-color: blue;
+          height: 120px;
+          width: 502px;
+          display: flex;
+          flex-flow: row wrap;
+          gap: 5px;
+          justify-content: space-around;
+        }
+        #tb div{
+          padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+
+<div id="main">
+  <div id="fb">
+    <img src="../Day6/img/img_avatar.png" alt="profile" >
+    <div><a href="">Home</a></div>
+    <div><a href="">About</a></div>
+    <div><a href="">Story</a></div>
+    <div><a href="">Info</a></div>
+    
+  </div>
+  <div id="sb">
+    <div id="sb1">
+      <h3>Photo Album</h3>
+      <p>
+        A photo album, is a collection of photographs, generally in a book. Some book-form photo albums have compartments which the photos may be slipped into; other albums have heavy paper with an abrasive surface covered with clear plastic sheets, on which surface photos can be put.
+      </p>
+
+    </div>
+    <div id="sb2">
+      <div><img src="../day5/img/10.jpeg" alt="bg" height="100" width="80" ></div>
+      <div><img src="../day5/img/9.jpeg" alt="bg" height="100" width="80"></div>
+      <div><img src="../day5/img/8.jpeg" alt="bg" height="100" width="80"></div>
+      <div><img src="../day5/img/8.jpeg" alt="bg" height="100" width="80"></div>
+      <div><img src="../day5/img/8.jpeg" alt="" height="100" width="80"></div>
+      <div><img src="../day5/img/9.jpeg" alt="" height="100" width="80"></div>
+    </div>
+    
+  </div>
+  <div id="tb">
+    <div><img src="../day5/img/1.jpeg" alt="bg" height="100" width="150"></div>
+    <div><img src="../day5/img/2.jpeg" alt="bg" height="100" width="150"></div>
+    <div><img src="../day5/img/3.jpeg" alt="bg" height="100" width="150"></div>
+  </div>
+  
+ 
+</div>
+</body>
+</html>
