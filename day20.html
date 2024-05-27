@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BR Arch</title>
+    <style>
+         /* html{
+            height: 3349px;
+            width:100vw;
+            font-family: Verdana, sans-serif;
+            font-size: 15px;
+            line-height: 22.5px;
+            text-align: start;
+            letter-spacing: normal;
+        }
+        body{
+            height: 3349px;
+            width: 100vw;
+            font-family: Verdana, sans-serif;
+            font-size: 15px;
+            line-height: 22.5px;
+            text-align: start;
+            letter-spacing: normal;
+            display: flex;
+            flex-direction: column; 
+        }*/
+        .fb{
+            width: 1332px;
+            height: 54px;
+            /* padding: 8px 16px; */ 
+            font-family: Verdana, sans-serif;
+            font-size: 15px;
+            line-height: 22.5px;
+            text-align: start;
+            letter-spacing: normal;
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0px;
+            background-color: white;  
+        }
+        .fb1{
+            /* background-color: blue; */
+            width: 900px;
+            height: 27px;
+            /* padding: 8px 16px; */
+            font-family: Verdana, sans-serif;
+            font-size: 15px;
+            line-height: 22.5px;
+            letter-spacing: 4px;
+            text-align: start;
+            align-items: center;
+            display: flex;
+            align-items: center;
+        }
+        .fb2{
+            /* background-color: blueviolet; */
+            height: 27px;
+            width: 420px;
+            font-family: Verdana, sans-serif;
+            font-size: 15px;
+            line-height: 22.5px;
+            letter-spacing: 4px;
+            text-align: start;
+            /* padding: 8px 16px; */
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            justify-content: end;
+        }
+        .fb21{
+            /* background-color: brown; */
+            height: 20.px;       
+            width: 200px;
+            padding: 3px;
+            font-family: Verdana, sans-serif;
+            font-size: 15px;
+            line-height: 22.5px;
+            text-align: center;
+            letter-spacing: 4px;
+            padding: 8px 16px;
+        }
+        .sb{
+            background-image: url(img/architect.jpg);
+            width: 1330px;
+            height: 800px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .center{
+            margin-top: 80px;
+            width: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .sb1{
+            font-family:'Segoe UI', Arial, sans-serif;
+            background-color: #000000b9;
+            /* opacity: 0.7; */
+            padding: 8px 16px;
+            font-size: 36px;
+            line-height: 54px;
+            color: #f1f1f1;
+            letter-spacing: 4px;
+            justify-content: center;
+            align-items: center;
+        } 
+        .sb2{
+            font-family: sans-serif ;
+            font-size: 36px;
+            line-height: 54px;
+            letter-spacing: 5px;
+            color: #f1f1f1;
+            padding-left: 10px;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .tb{
+            
+            width: 1280px;
+            height: 110px;
+            padding: 32px 16px;
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+
+        }
+        .tb1{
+            margin: 10px 0;
+            padding: 16px 0;
+            width: 1100px;
+            height: 69px;
+            font-size: 24px;
+            line-height: 36px;
+            letter-spacing: normal;
+            text-align: start;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            align-items: center;
+        }
+        .fob{
+            /* border: 1px solid; */
+            width: 1323px;
+            height:  440px;
+            padding: 0 8px;
+            display:flex;
+            flex-wrap: wrap ;
+            gap:0 6px ;
+
+        }
+        .fob1{
+            background-image: url(img/house5.jpg);
+            background-size: 100% 100%;
+            width: 326px;
+            height: 205px;
+            
+        }
+        .fob2{
+            background-image: url(img/house2.jpg);
+            background-size: 100% 100%;
+            width: 326px;
+            height: 205px;
+            
+        }
+        .fob3{
+            background-image: url(img/house3.jpg);
+            background-size: 100% 100%;
+            width: 326px;
+            height: 205px;
+            
+        }
+        .fob4{
+            background-image: url(img/house4.jpg);
+            background-size: 100% 100%;
+            width: 326px;
+            height: 205px;
+            
+        }
+        .fob5{
+            background-image: url(img/house2.jpg);
+            background-size: 100% 100%;
+            width: 326px;
+            height: 205px;
+            
+        }
+        .fob6{
+            background-image: url(img/house5.jpg);
+            background-size: 100% 100%;
+            width: 326px;
+            height: 205px;
+            
+        }
+        .fob7{
+            background-image: url(img/house4.jpg);
+            background-size: 100% 100%;
+            width: 326px;
+            height: 205px;
+            
+        }
+        .fob8{
+            background-image: url(img/house3.jpg);
+            background-size: 90% 10%;
+            width: 326px;
+            height: 205px;
+            
+        }
+        .bu{
+            background-color: #00000070;
+            color: #ffffff;
+            width: 148px;
+            height: 38px;
+            font-family: Verdana, sans-serif;
+            font-size: 15px;
+            line-height: 22.5px;
+            letter-spacing: normal;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .fib{
+            width: 1323px;
+            height: 263px;
+            display: flex;
+            flex-direction: column ;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .fib1{
+            
+            padding: 16px 0;
+            width: 1285px;
+            height: 69px;
+            font-family: 'Segoe UI',Arial , sans-serif;
+            font-size: 24px;
+            line-height: 36px;
+            display: flex;
+            justify-content: flex-start;
+            letter-spacing: normal;
+            align-items: center;
+        }
+        .fib2{
+            width: 1285px;
+            height: 90px;
+            /* margin: 15px 0; */
+            font-family:Verdana, sans-serif ;
+            font-size: 15px ;
+            line-height: 22.5px;
+            text-align: start;
+            letter-spacing: normal;
+        }
+        .sib{
+            /* border: 1px solid; */
+            width: 1323px;
+            height: 456px;
+            padding: 0px 8px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-grow: 1;
+        }
+        .img1{
+            width: 316px; 
+            height: 440px;
+            padding: 0 7px;
+            margin-bottom: 16px;
+            font-family: Verdana, sans-serif;
+        }
+        .nam{
+            margin: 10px 0;
+            width: 300px;
+            height: 36px;
+            font-family: 'Segoe UI', Arial, sans-serif ;
+            font-size: 24px;
+            line-height: 36px;
+            text-align: start;
+            letter-spacing: normal;
+        }
+        .sib1{
+            margin: 15px 0;
+            width: 300px;
+            height: 22px;
+            font-family: Verdana, sans-serif;
+            font-size: 15px;
+            line-height: 22.5px;
+            text-align: start;
+            letter-spacing: normal;
+            color: #000000ab;
+        }
+        .sib2{
+            margin: 15px 0;
+            width: 300px;
+            height: 67px;
+            font-family: Verdana, sans-serif;
+            font-size: 15px;
+            line-height: 22.5px;
+            text-align: start;
+            letter-spacing: normal;
+        } 
+        .sib3{
+            padding: 8px 16px;
+            width: 300px;
+            height: 38px;
+            font-family: Verdana, sans-serif;
+            font-size: 15px;
+            line-height: 22.5px;
+            letter-spacing: normal;
+            text-align: center;
+            background-color: #f1f1f1;
+            cursor: pointer;
+            box-sizing: border-box;
+            border: none;
+        }
+        .sib3:hover{
+            background-color: #cccccc;
+        }
+        .seb{
+            padding: 32px 16px;
+            width: 1307px;
+            height: 420px;
+            display: flex;
+            flex-direction: column;
+            font-family: Verdana, sans-serif;
+            font-size: 15px;
+            line-height: 22.5px;
+            text-align: start;
+            letter-spacing: normal;
+            align-items: center;
+        }
+        .seb1{
+            /* margin: 10px 0; */
+            padding: 16px 0;
+            width: 1307px;
+            height: 54px;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 24px;
+            line-height: 36px;
+            text-align: start;
+            letter-spacing: normal;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .seb p{
+            margin: 15px 0;
+            width: 1307px;
+            height: 22px;
+            font-family: Verdana, sans-serif;
+            font-size: 15px;
+            line-height: 22.5px;
+            text-align: start;
+            letter-spacing: normal;
+        }
+        .seb input{
+            padding: 8px 8px;    
+            width: 1285px;
+            height: 20px;
+            font-family: Verdana, sans-serif;
+            font-size: 15px;
+            line-height: 22.5px;
+            text-align: start;
+            letter-spacing: normal;
+        }
+        .seb button{
+            margin: 16px 0;
+            padding: 8px 0;
+            width: 150px;
+            height: 36px;
+            background-color: #000000;
+            color: #f1f1f1;
+            cursor: pointer;
+            box-sizing: border-box;
+            border: none;
+            font-family: Verdana, sans-serif;
+            font-size: 15px;
+            line-height: 22.5px;
+            text-align: center;
+            letter-spacing: normal;
+            cursor: pointer;
+            box-sizing: border-box;
+            border: none;   
+        }
+        button:hover{
+            background-color:#cccccc ;
+        }
+        .map{
+            width: 1323px;
+            height: 755px;
+            margin-top: 10px; 
+        }
+        .footer{
+            background-color: #000000;
+            width: 1323px;
+            height: 84px;
+            padding: 16px 0;
+            color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Verdana, sans-serif;
+            font-size: 15px;
+            line-height: 22.5px;
+            text-align: center;
+            letter-spacing: normal;
+        }
+        .footer a{
+            color: #ffffff;
+        }
+        .footer a:hover{
+            color: #4caf50;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="fb"> 
+        <div class="fb1"><a class="fb21" href="#Home" style="text-decoration: none;"><b>BR</b> Architects</a></div>
+        <div class="fb2">
+            <a class="fb21" href="#Projects" style="text-decoration: none;" >Projects</a>
+            <a class="fb21" href="#About" style="text-decoration: none;" >About</a>
+            <a class="fb21" href="#Contact" style="text-decoration: none;" >Contact</a>
+         </div>
+    </div>
+    <header class="sb" id="Home">
+        <div class="center">
+            <h1>
+                <span class="sb1"><b>BR</b></span>
+            </h1>
+            <span class="sb2">Architects</span>
+        </div>  
+    </header>
+    <div class="tb">
+        <div class="tb1" id="Projects">Projects</div>
+    </div>
+    <div class="fob">
+        <div class="fob1"><div class="bu">Summer House</div></div>
+        <div class="fob2"><div class="bu">Brick House</div></div>
+        <div class="fob3"><div class="bu">Renovated</div></div>
+        <div class="fob4"><div class="bu">Barn House</div></div>
+        <div class="fob5"><div class="bu">Summer House</div></div>
+        <div class="fob6"><div class="bu">Brick House</div></div>
+        <div class="fob7"><div class="bu">Renovated</div></div>
+        <div class="fob8"><div class="bu">Barn House</div></div>
+    </div>
+    <div class="fib">
+        <div class="fib1" id="About">
+            About
+        </div>
+        <div class="fib2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+        </div>
+    </div>
+    <div class="sib">
+        <div class="img1">
+            <img src="img/team2.jpg" alt="" style="width: 100%;" >
+            <p class="nam">John Deo</p>
+            <p class="sib1">CEO & Founder</p>
+            <p class="sib2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <p><button class="sib3">Contact</button></p>
+        </div>
+        <div class="img1">
+            <img src="img/team1.jpg" alt="" style="width: 100%;">
+            <p class="nam">Jane Deo</p>
+            <p class="sib1">Architect</p>
+            <p class="sib2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <p><button class="sib3">Contact</button></p>
+        </div>
+        <div class="img1">
+            <img src="img/team3.jpg" alt="" style="width: 100%;">
+            <p class="nam">Mike Ross</p>
+            <p class="sib1">Architect</p>
+            <p class="sib2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <p><button class="sib3">Contact</button></p>
+        </div>
+        <div class="img1">
+            <img src="img/team4.jpg" alt="" style="width: 100%;">
+            <p class="nam">Dan Star</p>
+            <p class="sib1">Architect</p>
+            <p class="sib2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <p><button class="sib3">Contact</button></p>
+        </div>
+
+    </div>
+    <div class="seb">
+        <div class="seb1" id="Contact">Contact</div>
+        <p>Lets get in touch and talk about your next project.</p>
+        <form action="" style="width: 1307px; height: 296px; display: flex; flex-direction: column; gap: 16px;">
+            <input type="text" name="Name" placeholder="Name" required>
+            <input type="text" name="Email" placeholder="Email" required>
+            <input type="text" name="Subject" placeholder="Subject" required>
+            <input type="text" name="Comment" placeholder="Comment" required>
+            <button type="submit">SEND MESSAGE</button>
+        </form>
+    </div>
+    <div class="map">
+        <img src="img/map.jpg" alt="" style="width: 100%;">-
+    </div>
+    <div class="footer">
+        <p>Powered by</p>&nbsp;<a href="https://www.w3schools.com/w3css/default.asp">w3.css</a>
+    </div>
+</body>
+</html>
