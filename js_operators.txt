@@ -1,0 +1,135 @@
+1.console.log(10+10);
+  output:- 20 //add the two numbers
+2.console.log(10+"10");
+  output:- 1010 //concatenation
+3.console.log(10 + +"10");
+  output:- 20 //add the numbers
+4.console.log(10 + "10" + 10);
+  output:- 101010 //concatenation
+5.console.log(10 - "2");
+  output:- 8 //arithmetic operation
+6.console.log(10 - "2" - "8");
+  output:- 0 //arithmetic operation
+7.console.log(10 > 9 > 8);
+  output:- false //Boolean
+8.console.log(10*"10");
+  output:- 100 //arithmetic operation
+9.console.log(100/"100");
+  output:- 1 //arithmetic operation
+10.console.log(100/"0");
+  output:- Infinity //arithmetic operation
+11.console.log(100 + + "100" - "100" * "100");
+  output:- -9800 //arithmetic operation
+12.console.log(1 == "1");
+  output:- true //Boolean
+13.console.log(1 === "1");
+  output:- false //Boolean
+14.console.log(1 == "one");
+  output:- false //arithmetic operation
+15.console.log(1 === "one");
+  output:- false //arithmetic operation
+16.console.log(1+true);
+  output:- 1 //arithmetic operation
+17.console.log(1-true);
+  output:- 0 //arithmetic operation
+18.console.log(1-true-false);
+  output:- 0 //arithmetic operation
+19.console.log("1"+true);
+  output:- 1true //arithmetic operation
+20.console.log(+"1"+true);
+  output:- 2 //arithmetic operation
+21.console.log(undefined==undefined);
+  output:- true //arithmetic operation
+22.console.log(undefined===undefined);
+  output:- true //arithmetic operation
+23.console.log(null==null);
+  output:- true //arithmetic operation
+24.console.log(null===null);
+  output:- true //arithmetic operation
+25.console.log(undefined==null);
+  output:- true //arithmetic operation
+26.console.log(undefined===null);
+  output:- true //arithmetic operation
+27.console.log(2+NaN);
+  output:- NaN //arithmetic operation
+28.console.log("2"+NaN);
+  output:- 2NaN //arithmetic operation
+29.console.log("2"+undefined);
+  output:- 2undefined //arithmetic operation
+30.console.log(2+NaN);
+  output:- NaN //arithmetic operation
+31.console.log(typeof "123");
+  output:- string //arithmetic operation
+32.console.log(typeof 2);
+  output:- number //arithmetic operation
+33.console.log(typeof true);
+  output:- boolean //arithmetic operation
+34.console.log(typeof undefined);
+  output:- undefined //arithmetic operation
+35.console.log(typeof null);
+  output:- object //arithmetic operation
+36.console.log(typeof []);
+  output:- object //arithmetic operation
+37.console.log(typeof 1n);
+  output:- bigint //arithmetic operation
+38.console.log(typeof 1n+2n);
+  output:- bigint2 //arithmetic operation
+39.console.log(typeof 1+2n);
+  output:- number2 //arithmetic operation
+40.console.log(typeof 1/n);
+  output:- error //arithmetic operation
+41.console.log(5+3*2);
+  output:- 11 //arithmetic operation
+42.console.log(12-4/2);
+  output:- 10 //arithmetic operation
+43.console.log(7+2*3-1);
+  output:- 12 //arithmetic operation
+44.console.log(9%3+2);
+  output:- 2 //arithmetic operation
+45.console.log(15/3*2);
+  output:- 10 //arithmetic operation
+46.console.log(24>>2);
+  output:- 6 //arithmetic operation
+47.console.log(17&3);
+  output:- 1 //arithmetic operation
+48.console.log(28^2);
+  output:- 30 //arithmetic operation
+49.console.log(11+3<<2);
+  output:- 56 //arithmetic operation
+50.console.log(25-5|3);
+  output:- 23 //arithmetic operation
+51.let username="admin";
+   let password="password";
+   let granted=(username==="admin" && password==="password")? true:false;
+   console.log(granted);
+  output:- true //arithmetic operation
+52.let username="admin";
+   let password="wrongpassword";
+   let granted=(username==="admin" && password==="password")? true:false;
+   console.log(granted);
+  output:- false //arithmetic operation
+53.let username="admin";
+   let password="password";
+   let granted=(username==="admin" || password==="password")? "Granted":"Denied";
+   console.log(granted);
+  output:- Granted //arithmetic operation
+54.let username="";
+   let password="password";
+   let granted=(username !== "" && password==="password")? "Logged in":"Please enter username and password";
+   console.log(granted);
+  output:- Please enter username and password //arithmetic operation
+55.let username="admin";
+   let password="wrongpassword";
+   let granted=(username==="admin" && password==="password")? true:false;
+   console.log(granted);
+  output:- false //arithmetic operation
+56.let user={name:"John"};
+   let name1=user?.name?? "Unknown";
+   console.log(name1);
+  output:- 100 //arithmetic operation
+57.
+  output:- 100 //arithmetic operation
+58.
+  output:- 100 //arithmetic operation
+59.
+  output:- 100 //arithmetic operation
