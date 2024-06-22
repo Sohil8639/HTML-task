@@ -1,0 +1,44 @@
+//Arithmetic operations
+console.log(arth(1,2,"+"))
+function arth(a,b,c){
+    switch(c){
+        case "+":
+            return a+b;
+            break;
+        case "-":
+            return a-b;
+            break;
+        case "*":
+            return a*b;
+            break;
+        case "/":
+            return a/b;
+            break
+        default:
+            return false;
+
+    }
+}
+
+
+
+//Square
+(function squ(a){
+    console.log(a*a);
+})(8)
+
+
+
+//Maximum
+const max=(a,b)=>{
+    return (a>b)?a:b;
+}
+console.log(max(26,52));
+
+
+
+//Find the interest
+function Intrst(p,t,r){
+    return (p*t*r)/100;
+}
+console.log(Intrst(10000,2,12));
