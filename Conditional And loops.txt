@@ -1,0 +1,194 @@
+// //Maximum number using if-else condition
+let a = 12,
+  b = 13;
+if (a > b) console.log("Maximun Number is", a);
+else console.log("Maximum Number is", b);
+
+// //Find the sign of given number
+var x = 10,
+  y = -19,
+  z = -4;
+s = x * y * z;
+if (s > 0) {
+  console.log("The sign is +");
+} else {
+  console.log("The sign is -");
+}
+
+// //descending order using if-ladder
+var x = -10,
+  y = -1,
+  z = 2,
+  t = "";
+if (x > y && x > z) {
+  // console.log(x);
+  t += x + ",";
+  if (y > z) {
+    // console.log(y);
+    t += y + ",";
+    // console.log(z);
+    t += z;
+  } else {
+    // console.log(z);
+    t += z + ",";
+    // console.log(y);
+    t += y;
+  }
+} else if (y > z && y > x) {
+  // console.log(y);
+  t += y + ",";
+  if (z > x) {
+    // console.log(z);
+    t += z + ",";
+    // console.log(x);
+    t += x;
+  } else {
+    // console.log(x);
+    t += x + ",";
+    // console.log(z);
+    t += z;
+  }
+} else {
+  // console.log(z);
+  t += z + ",";
+  if (y > x) {
+    // console.log(y);
+    t += y + ",";
+    // console.log(x);
+    t += x;
+  } else {
+    // console.log(x);
+    t += x + ",";
+    // console.log(y);
+    t += y;
+  }
+}
+console.log(t);
+
+// //Find the largest number using if-else if
+var i = 10,
+  j = 2,
+  k = 10,
+  l = 11,
+  m = 3;
+if (i > j && i > k && i > l && i > m) {
+  console.log(i);
+} else if (j > k && j > l && j > m) {
+  console.log(j);
+} else if (k > l && k > m) {
+  console.log(k);
+} else if (l > m) {
+  console.log(l);
+} else {
+  console.log(m);
+}
+
+var e = " is even",
+  o = " is odd";
+for (i = 0; i <= 15; i++) {
+  if (i % 2 == 0) console.log(i + e);
+  else console.log(i + o);
+}
+
+// //Avg marks using loop and conditional statement
+obj = { David: 80, Vinoth: 77, Divya: 88, Ishitha: 95, Thomas: 68 };
+var avg=0,c=0;
+for(i in obj){
+    c+=1;
+    avg+=obj[i];
+}
+avg=avg/c;
+console.log(avg)
+if(avg<100 && avg>=90)
+    console.log("A");
+if(avg<90 && avg>=80)
+    console.log("B");
+if(avg<80 && avg>=70)
+    console.log("C");
+if(avg<70 && avg>=60)
+    console.log("D");
+if(avg<60)
+    console.log("F");
+    
+
+
+// //multiple of 3(Fizz) multiple of 5(Buzz) and both multiples(FizzBuzz)
+for(i=0;i<=100;i++){
+    if(i%3==0 && i%5==0)
+        console.log(i+" FizzBuzz");
+    else if(i%5==0)
+        console.log(i+" Buzz");
+    else if(i%3==0)
+        console.log(i+" Fizz");
+    else
+        console.log(i);
+}
+
+var n=1,t="";
+for(i=0;i<=10;i++){
+  while(!happy(n)){
+    n++;
+  }
+  t+=n+" "
+  n++;
+}
+console.log(t);
+
+function happy(n){
+  var m1,re,c=[];
+  while(n!==1 && c[n]!=true){
+    m1=0;
+    c[n]=true;
+    while(n>0){
+      re=n%10;
+      m1+=re*re;
+      n=(n-re)/10;
+    }
+    n=m1;
+  }
+  console.log(c)
+  return n==1;
+
+}
+
+
+//Armstrong 
+var n=371;
+if(Armstrong(n))
+  console.log("Armstrong");
+
+function Armstrong(n){
+  var s=0,re,n1=n;
+  while(n>0){
+    re=n%10;
+    s+=re*re*re;
+    n=(n-re)/10;
+  }
+  if(s==n1)
+    return 1
+
+  console.log("Not an Armstrong");
+}
+
+
+//Pattern using nested loop
+for(i=0;i<=6;i++){
+  var t="";
+  for(k=0;k<=i;k++){
+    t+="*";
+  }
+  console.log(t)
+}
+
+//GCD
+var x1=36,x2=6,f;
+while(x1!=x2){
+  if(x1>x2)
+    x1=x1-x2;
+  else
+    x2=x2-x1
+}
+f=x1;
+console.log(f);
+p=x1*x2;
+console.log(p/f);
