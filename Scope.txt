@@ -1,0 +1,47 @@
+var x = 10;
+function foo() {
+  var x = 20;
+  console.log(x);
+}
+foo();
+
+The Output is 20. The variable x has a local scope and stored as 20.
+
+var x = 10;
+function foo() {
+  console.log(x);
+  var x = 20;
+}
+foo();
+
+The Output is undefined. The variable x is declare before access of that particular variable.
+
+var x = 10;
+function foo() {
+  console.log(x);
+}
+var x = 20;
+foo();
+
+The Output is 20. The variable x is has declare as global variable, global variables are applicable for both local and global scope.
+
+function foo() {
+  console.log(x);
+}
+var x = 10;
+foo();
+
+The Output is 10. The variable x is has declare as global variable, global variables are applicable for both local and global scope.
+
+function foo() {
+  console.log(x);
+}
+foo();
+var x = 10;
+
+The Output is undefined. the variable x is not declare in the function but declare as global before function call, so the output is undefined.
+
+
+
+
+

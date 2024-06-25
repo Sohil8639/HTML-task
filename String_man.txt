@@ -1,0 +1,20 @@
+//Print the Asscii Values of the String.
+s="sohil";
+for(i=0;i<s.length;i++){
+    console.log(s[i],"-->",s.charCodeAt(i));
+}
+
+
+//Removing the spaces in the string.
+txt="Hello World! My Name is Sohil Basha"
+let x=txt.split(" ");
+console.log(x.join(""));
+
+
+//Reverse the String.
+txt="Hello"
+txt1=""
+for(i=txt.length-1;i>=0;i--){
+    txt1+=txt[i];
+}
+console.log(txt1);

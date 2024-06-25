@@ -1,0 +1,83 @@
+
+let arr=[1,2,3,4,5,6],s=0;
+for(let i=0;i<arr.length;i++){
+  if(arr[i]%2==0){
+    s+=arr[i];
+  }
+}
+console.log(s);
+
+do{
+  if(arr[s]!=5){
+    console.log(arr[s]);
+  }
+  s++;
+}while(s<arr.length);
+
+let num=1;
+for(i=num;i<=10;i++){
+  console.log(i);
+}
+
+
+
+str="malala";
+i=0;
+j=str.length-1;
+while(i<j){
+  if(str[i]==str[j]){
+    i++;
+    j--;
+  }
+  else{
+    console.log(str,"--> is not a palindrome")
+    s=1;
+    break
+  }
+}
+if(!s){
+  console.log(str,"--> is a palindrome");
+}
+
+
+let num=10;
+do{
+  if(num%2!=0){
+    console.log(num);
+  }
+  else{
+    console.log("Skipping Even Number");
+  }
+  num--;
+}while(num>0);
+
+let a=[45,23,54,100,46,76],s=0;
+for(i of a){
+  s+=i;
+}
+s=s/a.length;
+if(s>50){
+    console.log(s);
+    console.log("Average is Large");
+}
+else{
+    console.log(s);
+}
+
+
+k=5;
+
+for(let i=0;i<k;i++){
+    let t="";
+    if(i<Math.trunc(k/2)){
+        for(let j=0;j<=i;j++){
+            t+="*";
+        }
+    }
+    else{
+        for(let m=Math.trunc(k/2);m<=i;m++){
+            t+="*"
+        }
+    }
+    console.log(t);
+}
