@@ -1,0 +1,54 @@
+//print an array of the keys of each obj using for in loop
+obj=[{a:1,b:2},{c:3,d:4},{e:5,f:6}];
+var arr=[];
+for(i in obj){
+    arr.push(Object.keys(obj[i]));
+}
+console.log(arr);
+
+
+//print an array of the values of each obj using for in loop
+obj=[{a:1,b:2},{c:3,d:4},{e:5,f:6}];
+var arr=[];
+for(i in obj){
+    arr.push(Object.values(obj[i]));
+}
+console.log(arr);
+
+
+//print an array having specific property
+obj=[{a:1},{b:2},{a:3,b:4}];
+t='a';
+arr=[];
+for(i in obj){
+    if(obj[i].hasOwnProperty(t)){
+        arr.push(obj[i]);
+    }
+}
+console.log(arr)
+
+
+Print the array with the obj sorted using for in loop 
+let obj=[{a:2},{a:1},{a:3}];         
+for(let i=0;i<obj.length;i++){
+    for(let j=i;j<obj.length;j++){
+        if(Object.values(obj[i])[0]<Object.values(obj[j])[0]){
+            let temp=obj[i]
+            obj[i]=obj[j]
+            obj[j]=temp;
+        }
+    }
+        
+}
+console.log(obj);
+
+
+//Print a new obj with properities from all the objects present in an array
+arr=[{a:1},{b:2},{c:3}];
+obj={}
+for(k=0;k<arr.length;k++){
+    for([i,j] of Object.entries(arr[k])){
+        obj[i]=j;
+    }
+}
+console.log(obj);

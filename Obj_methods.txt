@@ -1,0 +1,33 @@
+//find length of a str without function
+str="10000 coders";
+i=0;
+while(true){
+    i++;
+    if(str[i]==undefined){
+        break
+    }  
+}
+console.log(i);
+
+
+
+//iterate obj values using for in loop
+obj={"name":"sohil","age":22,"institute":"10000 coders"};
+for(i in obj){  
+    console.log(obj[i]);
+}
+
+
+//iterate obj keys using for in loop
+obj={"name":"sohil","age":22,"institute":"10000 coders"};
+for(i in obj){  
+    console.log(i);
+}
+
+
+
+// obj iteration using entries method
+obj={"name":"sohil","age":22,"institute":"10000 coders"};
+for([i,j] of Object.entries(obj)){
+    console.log(i,":",j);
+}

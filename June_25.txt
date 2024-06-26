@@ -1,0 +1,15 @@
+num=-970;
+n=num;
+if(num<0){
+    num*=-1;
+}
+var re,s=0;
+while(num!=0){
+    re=num%10;
+    s=s*10+re;
+    num=(num-re)/10;
+}
+if(n<0){
+    s*=-1;
+}
+console.log(s);
