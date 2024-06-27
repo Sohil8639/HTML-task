@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <script
+      src="https://kit.fontawesome.com/7f1a9230de.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .navbar {
+        margin: -2vh -1vw;
+        width: 9.8vw;
+        height: 104vh;
+        overflow: auto;
+        background-color: #222222;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+      }
+      .navbar1{
+        display: none;
+      }
+      .home_icon {
+        background-color: #000000;
+      }
+      .home_icon,
+      .about_icn,
+      .photo_icn,
+      .contact_icn {
+        padding: 2vh 4vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: #ffffff;
+      }
+      .about_icn:hover,
+      .contact_icn:hover,
+      .photo_icn:hover {
+        background-color: #000000;
+      }
+      .home_icon:hover {
+        background-color: #cccccc;
+        color: #000000;
+      }
+      .f2 {
+        text-align: center;
+        font-size: 5vh;
+        line-height: 6vh;
+        letter-spacing: normal;
+      }
+      #p1 {
+        margin: 12px 0;
+        font-family: sans-serif;
+        font-size: 12px;
+        line-height: 18px;
+        text-align: center;
+        letter-spacing: normal;
+      }
+      .header{
+        height: 100%;
+        margin-left: 9.8vw;
+        padding: 4vh 8vw;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: space-around;
+      }
+      .name {
+        height: 15vh;
+        font-family: Verdana, sans-serif;
+        font-size: 7vh;
+        line-height: 8vh;
+        text-align: center;
+        letter-spacing: normal;
+        display: flex;
+        align-items: center;
+      }
+      .header .p2 {
+        display: flex;
+        height: 3.5vh;
+        font-family: sans-serif;
+        font-size: 3vh;
+        line-height: 4vh;
+        text-align: center;
+        letter-spacing: normal;
+      }
+      .content{
+      
+        height: 100%;
+        margin-left: 9.8vw;
+        padding: 4vh 8vw;
+        display: flex;
+        flex-direction: column;
+      }
+      .cnt1 {
+        /* border: 1px solid; */
+        margin-top: 5vh;
+        font-family: Verdana, sans-serif;
+        font-size: 4vh;
+        line-height: 4.3vh;
+        text-align: justify;
+        letter-spacing: normal;
+        /* color: #f1f1f1; */
+      }
+      .line {
+        width: 12vw;
+        border: 1px solid #757575;
+      }
+      .para1 {
+        font-family: Verdana, sans-serif;
+        font-size: 2.5vh;
+        line-height: 4vh;
+        text-align: justify;
+        letter-spacing: normal;
+        color: #757575;
+      }
+      .skill {
+        padding: 2.5vh 0;
+        font-size: 24px;
+        font-family: Verdana, sans-serif;
+        line-height: 6vh;
+        text-align: justify;
+        letter-spacing: normal;
+      }
+      .s1 {
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-size: 2.3vh;
+        line-height: 3.2vh;
+        text-align: justify;
+        letter-spacing: 4px;
+        color: #757575;
+      }
+      .grey {
+        width: 2vw;
+        background-color: #616161;
+      }
+      .cnt_footer {
+        margin: 2.8vh 0;
+        padding: 2.8vh 0;
+        height: 20vh;
+        background-color: #f1f1f1;
+        /* border: 1px solid; */
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .cnt_footer_items {
+        width: 25%;
+        height: 9.5vh;
+        /* border: 1px solid; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+        font-size: 3.8vh;
+        line-height: 6.5vh;
+        text-align: center;
+        letter-spacing: normal;
+      }
+      .s2 {
+        font-family: Verdana, sans-serif;
+        font-size: 2.2vh;
+        letter-spacing: 0.5vh;
+        line-height: 3vh;
+      }
+      .button {
+        display: flex;
+        margin: 2.5vh 0;
+        width: 20vw;
+        height: 7vh;
+        font-family: Verdana, sans-serif;
+        font-size: 3.2vh;
+        line-height: 3.8vh;
+      }
+      .cnt2 {
+        /* border: 1px solid; */
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+      }
+      .main_cnt2 {
+        /* border: 1px solid; */
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 3vh;
+      }
+      .subcnt1 {
+        /* border: 1px solid rgba(0, 0, 0, 0.274); */
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #000000;
+      }
+      
+      .subcnt1 h3 {
+        height: 6vh;
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-size: 24px;
+        line-height: 36px;
+        text-align: center;
+      }
+      .s3 {
+        border: 1px solid rgba(0, 0, 0, 0.274);
+        width: 100%;
+        height: 4vh;
+        padding: 2.8vh 0;
+        background-color: #f1f1f1; 
+        display: flex;
+        justify-content: center;
+        font-family: Verdana, sans-serif;
+        font-size: 15px;
+        line-height: 22.5px;
+
+      }
+      #ID{
+        background-color: #616161; 
+        width: 100%;
+        color: white;
+      }
+      .s3 button{
+        width: 9vw;
+        height: 6vh;
+        background-color: #ffffff; 
+        font-family: Verdana, sans-serif;
+        font-size: 15px;
+        border: none;
+
+      }
+      .s3 button:hover{
+        background-color: black;
+        color: white;
+        cursor: pointer;
+      }
+      .rep{
+        /* border: 1px solid; */
+        height: 10vh;
+        font-family: 'Segoe UI',Arial , sans-serif;
+        font-size: 20px;
+        line-height: 36px;
+        text-align: start;
+        display: flex;
+        align-items: center;
+      }
+      .content1{
+        /* border: 1px solid; */
+        height: 100%;
+        margin-left: 9.8vw;
+        padding: 4vh 8vw;
+        display: flex;
+        flex-direction: column;
+      }
+      .photos{
+        display: flex;
+        gap: 5px;
+        /* border: 1px solid; */
+      }
+      .p_sec{
+        display: flex;
+        flex-direction: column;
+        width: 45vw;
+      }
+      .contact{
+        color: #757575;
+        font-family: Verdana, sans-serif;
+        font-size: 15px;
+        line-height: 22.5px;
+        text-align: start;
+        letter-spacing: normal;
+      }
+      input{
+        margin: 5px 0;
+        padding: 2.8vh 1.2vh;
+        width: 100%;
+        color: #757575;
+        font-family: Verdana, sans-serif;
+        font-size: 18px;
+        line-height: 22.5px;
+        text-align: start;
+        letter-spacing: normal;
+      }
+      form button{
+        margin: 10px 0;
+        padding: 2vh 4vh;
+        font-family: Verdana, sans-serif;
+        font-size: 15px;
+        line-height: 22.5px;
+        text-align: center;
+        cursor: pointer;
+        letter-spacing: normal;
+        border-radius: 5px;
+      }
+      .footer{
+        margin-left: 9.8vw;
+        padding: 4vh 8vw;
+      }
+      .fa3{
+        font-size: 24px;
+        line-height: 22.5px;
+        letter-spacing: normal;
+        color: #757575;
+      }
+      .footer p{
+        margin: 15px 0;
+        font-family: Verdana, sans-serif;
+        font-size: 15px;
+        line-height: 22.5px;
+        text-align: start;
+        letter-spacing: normal;
+        color: #757575;
+      }
+      .footer a{
+        color: #757575;
+      }
+      .fa3:hover{
+        color: #616161;
+      }
+      .footer a:hover{
+        color: #4caf50;
+      }
+      @media screen and (max-width:768px) {
+        .navbar{
+          width: 15vw;
+        }
+      }
+      @media screen and (max-width:600px){
+        .navbar{
+          display: none;
+        }
+
+        .navbar1{
+          margin: 0;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          /* justify-content: center; */
+          /* align-items: center; */
+          position: sticky;
+          top: 0;
+          background-color: #000000;
+        }
+        .navbar1 div{
+          padding: 2% 0;
+          font-family: "Montserrat", sans-serif;
+          font-size: 12.5px;
+          line-height: 1.5;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          width: 25%;
+          
+        }
+        .navbar1 div a:hover{
+          color: #000;
+          background-color: #ccc;
+        }
+        .navbar1 div a{
+          padding: 2% 0;
+          text-decoration: none;
+          color: #fff;
+          text-align: center;
+          cursor: pointer;
+          width: 100%;
+          height: 100%;
+        }
+        .header, .content, .content1, .footer{
+          margin-left: 0;
+        }
+        .cnt_footer{
+          flex-direction: column;
+          height: 100%;
+        }
+        .cnt_footer_items{
+          height: 15vh;
+        }
+        .button{
+          width: 45vw;
+        }
+        .main_cnt2{
+          flex-direction: column;
+          height: 100%;
+        }
+        .subcnt1{
+          width: 100%;
+          height: 100%;
+        }
+      
+      }
+    </style>
+  </head>
+  <body style="background-color: #000000; margin: 0;">
+    <nav class="navbar1">
+      <div><a href="#home">HOME</a></div>
+      <div><a href="#about">ABOUT</a></div>
+      <div><a href="#photos">PHOTOS</a></div>
+      <div><a href="#contact">CONTACT</a></div>
+    </nav>
+    <div class="top">
+      <nav class="navbar">
+        <img src="img/avatar_smoke.jpg" alt="avatar" style="width: 100%" />
+        <a href="#home" class="home_icon">
+          <i class="fa fa-home f2"></i>
+          <p id="p1">HOME</p>
+        </a>
+        <a href="#about" class="about_icn">
+          <i class="fa fa-user f2"></i>
+          <p id="p1">ABOUT</p>
+        </a>
+        <a href="#photos" class="photo_icn">
+          <i class="fa fa-eye f2"></i>
+          <p id="p1">PHOTOS</p>
+        </a>
+        <a href="#contact" class="contact_icn">
+          <i class="fa fa-envelope f2"></i>
+          <p id="p1">CONTACT</p>
+        </a>
+      </nav>
+      <div class="header" id="home">
+        <h1 class="name" style="color: #ffffff;">I'm John Deo.</h1>
+        <p class="p2" style="color: #ffffff;">Photographer and Web Designer.</p>
+        <img src="img/man_smoke.jpg" alt="photo" style="width: 100%;margin-top: 5%;" />
+      </div>
+    </div>
+    <div class="content" id="about">
+      <h2 class="cnt1" style="color: #ffffff;">My Name</h2>
+      <div class="line"></div>
+      <p class="para1">
+        Some text about me. Some text about me. I am lorem ipsum consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+        qui officia deserunt mollit anim id est laborum consectetur adipiscing
+        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+        ut aliquip ex ea commodo consequat.
+      </p>
+      <h2 class="skill" style="color: #ffffff;">My Skills</h2>
+      <p class="s1">Photography</p>
+      <div style="height: 5vh; width: 100%; background-color: #f1f1ff">
+        <div class="grey" style="height: 5vh; width: 95%"></div>
+      </div>
+      <p class="s1">Web Design</p>
+      <div style="height: 5vh; width: 100%; background-color: #f1f1ff">
+        <div class="grey" style="height: 5vh; width: 85%"></div>
+      </div>
+      <p class="s1">Photoshop</p>
+      <div style="height: 5vh; width: 100%; background-color: #f1f1ff">
+        <div class="grey" style="height: 5vh; width: 75%"></div>
+      </div>
+      <br />
+      <div class="cnt_footer">
+        <div class="cnt_footer_items">
+          <span>11+</span>
+          <a class="s2">Partners</a>
+        </div>
+        <div class="cnt_footer_items">
+          <span>55+</span>
+          <a class="s2">Projects Done</a>
+        </div>
+        <div class="cnt_footer_items">
+          <span>89+</span>
+          <a class="s2">Happy Clients</a>
+        </div>
+        <div class="cnt_footer_items">
+          <span>150+</span>
+          <a class="s2">Meetings</a>
+        </div>
+      </div>
+      <div class="button">
+        <button style="width: 100%; height: 40px;"> <i class="fa fa-download f1"></i> Download Resume</button>
+      </div>
+      <div class="cnt2">
+        <h2 class="Skill" style="color: #ffffff;">My Price</h2>
+        <div class="main_cnt2">
+          <div class="subcnt1">
+            <div id="ID"><h3 style="font-size: 24px; line-height: 36px; font-family: 'Segoe UI',Arial , sans-serif; ">Basic</h3></div>
+            <div class="s3">Web Design</div>
+            <div class="s3">Photography</div>
+            <div class="s3">5GB Support</div>
+            <div class="s3">Mail Support</div>
+            <div
+              class="s3"
+              style="height: 10vh; display: flex; flex-direction: column"
+            >
+              <h2 style="margin: -1%; width: 100%; text-align: center">$ 10</h2>
+              <br /><a style="text-align: center;"> per month</a>
+            </div>
+            <div class="s3" style="padding: 22px 0;display: flex; justify-content: center; align-items: center;"><button style="width: 30%;">Sign Up</button></div>
+          </div>
+          <div class="subcnt1">
+            <div id="ID"><h3 style="font-size: 24px; line-height: 36px; font-family: 'Segoe UI',Arial , sans-serif;">Pro</h3></div>
+            <div class="s3">Web Design</div>
+            <div class="s3">Photography</div>
+            <div class="s3">50GB Support</div>
+            <div class="s3">Endless Support</div>
+            <div
+              class="s3"
+              style="height: 10vh; display: flex; flex-direction: column"
+            >
+              <h2 style="margin: -1%; width: 100%; text-align: center">$ 25</h2>
+              <br /><a style="text-align: center;"> per month</a>
+            </div>
+            <div class="s3" style="padding: 22px 0;display: flex; justify-content: center; align-items: center;"><button style="width: 30%;">Sign Up</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="rep"><h3 style="color: #ffffff; height: 100%; ">My Reputation</h3></div>
+      <div style="display: flex; height: 100%;"><img src="img/bandmember.jpg" alt="pic1" width="80px" style="border-radius: 50%;">
+         <div style="display: flex; flex-direction: column; justify-content: space-around; align-items: flex-start; padding: 0 20px; color: #757575; height: 100%;"> 
+          <a><span>Chris Fox.</span> CEO at Mighty Schools.</a>
+          <a>John Doe saved us from a web disaster.</a>
+        </div>
+      </div>
+      <div style="display: flex; margin-top: 2%; height: 100%;">
+        <img src="img/avatar_g2.jpg" alt="pic2" width="80px" style="border-radius: 50%; height: 100%;">
+        <div style="display: flex; flex-direction: column; justify-content: space-around; align-items: flex-start; padding: 0 20px; color: #757575; height: 100%;">
+          <a><span>Rebecca Flex.</span> CEO at Company.</a>
+          <a>No one is better than John Doe.</a>
+        </div>
+      </div>  
+    </div>
+    <div class="content1" id="photos">
+      <div><h2 class="cnt1" style="color: #ffffff;">My photos</h2></div>
+      <div class="line" style="margin: 10px 0;"></div>
+      <div class="photos">
+        <div class="p_sec">
+          <img src="img/wedding.jpg" alt="pic_1" width="100%">
+          <img src="img/rocks.jpg" alt="pic_2" width="100%">
+          <img src="img/sailboat.jpg" alt="pic_3" width="100%">
+        </div>
+        <div class="p_sec">
+          <img src="img/underwater.jpg" alt="pic_1" width="100%">
+          <img src="img/chef.jpg" alt="pic_2" width="100%">
+          <img src="img/wedding.jpg" alt="pic_3" width="100%">
+          <img src="img/p6.jpg" alt="pic_4" width="100%">
+        </div>
+      </div>
+    </div>
+    <div class="content1">
+      <div><h2 class="cnt1" style="color: #ffffff;">Contact</h2></div>
+      <div class="line"></div>
+      <div class="contact">
+        <p><i class="fa fa-map-marker f2 "></i> Chicago, US</p>
+        <p><i class="fa fa-phone f2"></i> Phone: +00 151515</p>
+        <p><i class="fa fa-envelope f2"> </i> Email: mail@mail.com</p>
+      </div>
+      <p style="padding: 10px 0; color: #757575;
+      font-family: Verdana, sans-serif;
+      font-size: 15px;
+      line-height: 22.5px;
+      text-align: start;
+      letter-spacing: normal;">Let's get in touch. Send me a message:</p>
+      <form action="">
+        <input type="text" name="Name" placeholder="Name" required>
+        <input type="text" name="Email" placeholder="Email" required>
+        <input type="text" name="Subject" placeholder="Subject" required>
+        <input type="text" name="message" placeholder="Message" required>
+        <button><i class="fa fa-paper-plane f1"></i> SEND MESSAGE</button>
+      </form>
+    </div>
+    <div class="footer" id="contact">
+      <i class="fa-brands fa-facebook fa3"></i>
+      <i class="fa-brands fa-instagram fa3"></i>
+      <i class="fa-brands fa-snapchat fa3"></i>
+      <i class="fa-brands fa-twitter fa3"></i>
+      <i class="fa-brands fa-linkedin fa3"></i>
+      <p>Powered by<a href="https://www.w3schools.com/w3css/default.asp"> sb.css</a></p>
+    </div>
+   
+  </body>
+</html>
