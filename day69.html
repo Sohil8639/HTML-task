@@ -36,15 +36,21 @@
             obj['pass']=ip2.value
             arr.push(obj)
             localStorage.setItem("details",JSON.stringify(arr))
-            let td=document.createElement("td")
-            td.style.border="1px solid"
-            td.style.borderCollapse="collapse"
+            let td1=document.createElement("td")
+            td1.style.border="1px solid"
+            td1.style.borderCollapse="collapse"
+            let td2=document.createElement("td")
+            td2.style.border="1px solid"
+            td2.style.borderCollapse="collapse"
             i=0
             while(arr[i]!=undefined){
-                td.innerHTML=`Name = ${arr[i]['name']} password = ${arr[i]['pass']}`;
-                h2.append(td)
+                td1.innerHTML=`Name = ${arr[i]['name']}`;
+                td2.innerHTML=`password = ${arr[i]['pass']}`;
+                tr.append(td1)
+                tr.append(td2)
                 i++;
             }
+            h2.appendChild(tr)
         })
     </script>
 </body>
