@@ -46,8 +46,8 @@
             while(arr[i]!=undefined){
                 td1.innerHTML=`Name = ${arr[i]['name']}`;
                 td2.innerHTML=`password = ${arr[i]['pass']}`;
-                tr.append(td1)
-                tr.append(td2)
+                tr.appendChild(td1)
+                tr.appendChild(td2)
                 i++;
             }
             h2.appendChild(tr)
