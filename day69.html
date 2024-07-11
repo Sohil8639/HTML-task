@@ -37,6 +37,7 @@
             obj['pass']=ip2.value
             arr.push(obj)
             localStorage.setItem("details",JSON.stringify(arr))
+            let tr=document.createElement("tr")
             let td1=document.createElement("td")
             td1.style.border="1px solid"
             td1.style.borderCollapse="collapse"
@@ -45,7 +46,6 @@
             td2.style.borderCollapse="collapse"
             i=0
             while(arr[i]!=undefined){
-                let tr=document.createElement("tr")
                 h2.appendChild(tr)
                 td1.innerHTML=`Name = ${arr[i]['name']}`;
                 td2.innerHTML=`password = ${arr[i]['pass']}`;
