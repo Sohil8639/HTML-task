@@ -46,13 +46,14 @@
             i=0
             while(arr[i]!=undefined){
                 let tr=document.createElement("tr")
+                h2.appendChild(tr)
                 td1.innerHTML=`Name = ${arr[i]['name']}`;
                 td2.innerHTML=`password = ${arr[i]['pass']}`;
                 tr.appendChild(td1)
                 tr.appendChild(td2)
                 i++;
             }
-            h2.appendChild(tr)
+            
         })
     </script>
 </body>
