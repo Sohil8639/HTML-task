@@ -27,7 +27,6 @@
         let h2=document.getElementsByTagName("table")[0]
         h2.style.border="1px solid"
         h2.style.borderCollapse="collapse"
-        let tr=document.createElement("tr")
         let arr=[];
         btn.addEventListener("click",(e)=>{
             e.preventDefault()
@@ -36,6 +35,7 @@
             obj['pass']=ip2.value
             arr.push(obj)
             localStorage.setItem("details",JSON.stringify(arr))
+            let tr=document.createElement("tr")
             let td1=document.createElement("td")
             td1.style.border="1px solid"
             td1.style.borderCollapse="collapse"
