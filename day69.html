@@ -18,13 +18,15 @@
         <button type="reset">Reset</button>
         &nbsp;
         <button type="submit" id="btn">Submit</button>
-        <ul></ul>
+        <table></table>
     </form>
     <script>
         let ip1=document.getElementById("ip1")
         let ip2=document.getElementById("ip2")
         let btn=document.getElementById("btn")
-        let h2=document.getElementsByTagName("ul")[0];
+        let h2=document.getElementsByTagName("table")[0]
+        h2.style.border="1px solid"
+        let tr=document.createElement("tr")
         let arr=[];
         btn.addEventListener("click",(e)=>{
             e.preventDefault()
@@ -33,11 +35,12 @@
             obj['pass']=ip2.value
             arr.push(obj)
             localStorage.setItem("details",JSON.stringify(arr))
-            let li=document.createElement("li")
+            let td=document.createElement("td")
+            td.style.border="1px solid"
             i=0
             while(arr[i]!=undefined){
-                li.innerHTML=`Name = ${arr[i]['name']} password = ${arr[i]['pass']}`;
-                h2.append(li)
+                td.innerHTML=`Name = ${arr[i]['name']} password = ${arr[i]['pass']}`;
+                h2.append(td)
                 i++;
             }
         })
