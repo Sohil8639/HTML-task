@@ -1,0 +1,1959 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../../bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./lib/animate/animate.min.css" />
+    <link rel="stylesheet" href="lib/owlcarousel/assets/owl.carousel.min.css" />
+    <link
+      rel="stylesheet"
+      href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./Nunito_Sans,PT_Sans/Nunito_Sans/static/NunitoSans_10pt-Light.ttf">
+    <link rel="stylesheet" href="./swiper-11.1.8/package/swiper-bundle.min.css">
+  </head>
+  <style>
+    *,
+    *::after,
+    *::before {
+      /* border:1px solid; */
+      box-sizing: border-box;
+    }
+    .text-danger{
+      font-size: 12px;
+    }
+    .card {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(rgba(20,20,31,0.7),rgba(20,20,31,0.7)) url(./img/bg_sign.jpg);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+      /* display: none; */
+    }
+    .blur {
+      filter: blur(5px);
+    }
+    .login-img .btn-outline-light{
+      background: #86b817;
+      color: #ffffff;
+    }
+    .login-img input:focus{
+      border-color: #86b817;
+      box-shadow: 0px 2px 2px #86b817;
+    }
+    .login-img label, .login-img i{
+      color: #86b817;
+    }
+    .login-img .btn-outline-light:hover{
+      background: #ffffff;
+      color: #86b817;
+      border-color: #86b817;
+    }
+    .btn-secondary,
+    .bg-secondary {
+      background: #86b817 !important;
+      color: #ffffff !important;
+      border-color: #86b817;
+    }
+    .btn-secondary:hover {
+      background: #ffffff !important;
+      color: #86b817 !important;
+      border-color: #86b817 !important;
+    }
+    .text-secondary{
+      color: #86b817 !important;
+    }
+    .border-secondary{
+      border-color:#86b817 !important;
+    }
+
+    .back-to-top {
+      position: fixed;
+      display: none;
+      right: 45px;
+      bottom: 45px;
+      z-index: 10;
+    }
+    #spinner {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
+      z-index: 999999;
+    }
+    #spinner.show {
+      transition: opacity 0.5s ease-out, visibility 0s linear 0s;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .btn {
+      font-family: "Nunito", sans-serif;
+      font-weight: 600;
+      transition: 0.5s;
+    }
+    .btn.btn-seondary {
+      color: #ffffff;
+    }
+    .btn-square {
+      width: 38px;
+      height: 38px;
+    }
+    .btn-sm-square {
+      width: 32px;
+      height: 32px;
+    }
+    .btn-lg-square {
+      width: 48px;
+      height: 48px;
+    }
+    .btn-square,
+    .btn-sm-square,
+    .btn-lg-square {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: normal;
+      border-radius: 0px;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+      font-family: "Nunito", sans-serif;
+      position: relative;
+      margin-right: 25px;
+      padding: 35px 0;
+      color: #ffffff !important;
+      font-size: 18px;
+      font-weight: 600;
+      outline: none;
+      transition: 0.5s;
+    }
+    .sticky-top.navbar-light .navbar-nav .nav-link {
+      padding: 20px 0;
+      color: #14141f !important;
+    }
+    .navbar-light .navbar-nav .nav-link:hover,
+    .navbar-light .navbar-nav .nav-link .active {
+      color: #86b817 !important;
+    }
+    .navbar-light .navbar-brand img {
+      max-height: 60px;
+      transition: 0.5s;
+    }
+    .sticky-top.navbar-light .navbar-brand img {
+      max-height: 45px;
+    }
+    @media (max-width: 991.98px) {
+      .sticky-top.navbar-light {
+        position: relative;
+        background: #ffffff;
+      }
+      .navbar-light .navbar-collapse {
+        margin-top: 15px;
+        border-top: 1px solid #dddddd;
+      }
+      .navbar-light .navbar-nav .nav-link,
+      .sticky-top.navbar-light .navbar-nav .nav-link {
+        padding: 10px 0;
+        margin-left: 0;
+        color: #14141f !important;
+      }
+      .navbar-light .navbar-brand img {
+        max-height: 45px;
+      }
+      
+    }
+    @media (min-width: 992px) {
+      .navbar-light {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        border-bottom: 1px solid rgba(256, 256, 256, 0.1);
+        z-index: 20;
+      }
+      .sticky-top.navbar-light {
+        position: fixed;
+        background: #ffffff;
+      }
+      .navbar-light .navbar-nav .nav-link::before {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 2px;
+        bottom: -1px;
+        left: 50%;
+        background: #86b817;
+        transition: 0.5s;
+      }
+      .navbar-light .navbar-nav .nav-link:hover::before,
+      .navbar-light .navbar-nav .nav-link.active::before {
+        width: calc(100% - 2px);
+        left: 1px;
+      }
+      .navbar-light .navbar-nav .nav-link.nav-contact::before {
+        display: none;
+      }
+    }
+
+    .hero-header {
+      background: linear-gradient(rgba(20, 20, 31, 0.7), rgba(20, 20, 31, 0.7)),
+        url(./img/bg-hero.jpg);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .section-title {
+      position: relative;
+      display: inline-block;
+      text-transform: uppercase;
+    }
+    .section-title::before {
+      position: absolute;
+      content: "";
+      width: calc(100% + 80px);
+      height: 2px;
+      top: 4px;
+      left: -40px;
+      background: #86b817;
+      z-index: -1;
+    }
+    .section-title::after {
+      position: absolute;
+      content: "";
+      width: calc(100% + 120px);
+      height: 2px;
+      bottom: 5px;
+      left: -60px;
+      background: #86b817;
+      z-index: -1;
+    }
+    .section-title.text-start::before {
+      width: calc(100% + 40px);
+      left: 0;
+    }
+    .section-title.text-start::after {
+      width: calc(100% + 60px);
+      left: 0;
+    }
+    .service-item {
+      box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+      transition: 0.5s;
+    }
+    .service-item:hover {
+      background: #86b817;
+    }
+    .service-item * {
+      transition: 0.5s;
+    }
+    .service-item:hover * {
+      color: #f5f5f5 !important;
+    }
+
+    .destination img {
+      transition: 0.5s;
+    }
+    .destination a:hover img {
+      transform: scale(1.1);
+    }
+
+    .package-item {
+      box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+    }
+    .package-item img {
+      transition: 0.5s;
+    }
+    .package-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .booking {
+      background: linear-gradient(rgba(15, 23, 43, 0.7), rgba(15, 23, 43, 0.7)),
+        url(./img/booking.jpg);
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
+
+    .team-item {
+      box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+    }
+    .team-item img {
+      transition: 0.5s;
+    }
+    .team-item:hover img {
+      transform: scale(1.1);
+    }
+    .team-item .btn {
+      background: #ffffff;
+      color: #86b817;
+      border-radius: 20px;
+      border-bottom: 1px solid #86b817;
+    }
+    .team-item .btn:hover {
+      background: #86b817;
+      color: #ffffff;
+    }
+
+    .testimonial-carousel::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      z-index: 2;
+    }
+    .testimonial-carousel::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(
+        to left,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      z-index: 1;
+    }
+    @media (min-width: 768px) {
+      .testimonial-carousel::before,
+      .testimonial-carousel::after {
+        width: 200px;
+      }
+    }
+    @media (min-width: 992px) {
+      .testimonial-carousel::before,
+      .testimonial-carousel::after {
+        width: 300px;
+      }
+    }
+    .testimonial-item {
+      transition: background 0.5s, border-color 0.5s;
+    }
+    
+    .swiper-slide-next {
+      background: #86b817 !important;
+      border-color: #86b817;
+      color: #ffffff;
+    }
+    
+    .swiper-pagination{
+      bottom: 10px !important;
+    }
+    .swiper-pagination-bullet{
+      background: grey;
+      border-color: rgba(255,255,255,0.08);
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    .swiper-pagination-bullet-active{
+      background: #86b817;
+    }
+    
+    
+
+    .footer .btn.btn-social {
+      margin-right: 15px;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #f5f5f5;
+      font-weight: normal;
+      border: 1px solid #ffffff;
+      border-radius: 35px;
+      transition: 0.3s;
+    }
+    .footer .btn.btn-social:hover {
+      color: #86b817;
+    }
+    .footer .btn.btn-link {
+      display: block;
+      margin-bottom: 5px;
+      padding: 0;
+      text-align: left;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: normal;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+    .footer .btn.btn-link::before {
+      position: relative;
+      content: "\f105";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      margin-right: 10px;
+    }
+    .footer .btn.btn-link:hover {
+      letter-spacing: 1px;
+      box-shadow: none;
+    }
+    .footer .copyright {
+      padding: 25px 0;
+      font-size: 15px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .footer .copyright a {
+      color: #f5f5f5;
+    }
+    .footer .footer-menu a {
+      margin-right: 15px;
+      padding-right: 15px;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .footer .footer-menu a:last-child {
+      margin-right: 0;
+      padding-right: 0;
+      border-right: none;
+    }
+  </style>
+  <body>
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="spinner-border text-secondary"
+        style="width: 3rem; height: 3rem"
+        role="status"
+      >
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- Navbar -->
+    <div class="container-fluid position-relative p-0">
+      <nav
+        class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0 shadow-sm"
+      >
+        <a href="" class="navbar-brand p-0">
+          <h1 class="text-secondary m-0">
+            <i class="fa fa-map-marker-alt me-3"></i>Tourist
+          </h1>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="toGGle"
+        >
+          <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="toGGle">
+          <div class="navbar-nav ms-auto py-0">
+            <a href="home.html" class="nav-item nav-link active">Home</a>
+            <a href="" class="nav-item nav-link">About</a>
+            <a href="" class="nav-item nav-link">Services</a>
+            <a href="" class="nav-item nav-link">Packages</a>
+            <div class="nav-item dropdown">
+              <a
+                href=""
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >Pages</a
+              >
+              <div class="dropdown-menu m-0">
+                <a href="" class="dropdown-item">Destination</a>
+                <a href="" class="dropdown-item">Booking</a>
+                <a href="" class="dropdown-item">Travel Guides</a>
+                <a href="" class="dropdown-item">Testimonial</a>
+              </div>
+            </div>
+            <a href="" class="nav-item nav-link">Contact</a>
+          </div>
+          <button class="btn btn-secondary rounded-pill py-2 px-4" id="register-btn"
+            >Register</button
+          >
+        </div>
+      </nav>
+      <div class="container-fluid py-5 mb-5 hero-header">
+        <div class="container py-5">
+          <div class="row justify-content-center py-5">
+            <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+              <h1 class="display-3 text-white mb-3 animated slideInDown">
+                Enjoy Your Vacation With us
+              </h1>
+              <p class="fs-4 text-white mb-4 animated slideInDown">
+                Time was a period of change at Clita, where both time and place
+                were centered on the essence of 'lorem sit'.
+              </p>
+              <div class="position-relative w-75 mx-auto animated slideInDown">
+                <input
+                  type="text"
+                  class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5"
+                  placeholder="eg. Thailand"
+                />
+                <button
+                  class="btn btn-secondary rounded-pill py-2 px-4 position-absolute top-0 end-0 me-2"
+                  style="margin-top: 7px"
+                >
+                  Search
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- navbar-end -->
+
+    <!-- resigter -->
+    <div class="container" id="login" style="display: none;" >
+      <div class="login-img p-5">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-start text-secondary pe-3">
+              Signup
+            </h6>
+            <h1 class="mb-4">
+              Create an <br /><span class="text-secondary">Tourist</span>
+              Accontant
+            </h1>
+          </div>
+          <div class="col-lg-6">
+            <form id="form">
+              <div class="row g-3">
+                <div class="col-12">
+                  <div class="form-floating wow fadeInUp" data-wow-delay="0.1s">
+                    <input
+                      type="text"
+                      class="form-control bg-transparent"
+                      placeholder="User Name"
+                      id="name1"
+                      required
+                    />
+                    <label for="name1">User Name</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating wow fadeInUp" data-wow-delay="0.3s">
+                    <input
+                      type="text"
+                      class="form-control bg-transparent"
+                      placeholder="Email Id"
+                      id="email"
+                    />
+                    <label for="email">Email Id</label>
+                    <n id="email1" class="text-md-end text-danger"></n>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating wow fadeInUp" data-wow-delay="0.5s">
+                    <input
+                      type="password"
+                      class="form-control bg-transparent"
+                      placeholder="Password"
+                      id="pass"
+                    />
+                    <label for="pass">Password</label>
+                    <n id="pass1" class="text-md-end text-danger"></n>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div
+                    class="form-floating wow fadeInUp position-relative"
+                    data-wow-delay="0.5s"
+                  >
+                    <input
+                      type="password"
+                      class="form-control bg-transparent"
+                      placeholder="Confirm Password"
+                      id="cp"
+                    />
+                    <label for="cp">Confirm Password</label>
+                    <a
+                      class="btn position-absolute top-0 start-100 mt-2"
+                      style="margin-left: -50px"
+                    >
+                      <i class="fa fa-eye-slash fs-4"></i>
+                    </a>
+                    <n id="cp1" class="text-md-end text-danger"></n>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating wow fadeInUp" data-wow-delay="0.7s">
+                    <input
+                      type="text"
+                      class="form-control bg-transparent"
+                      placeholder="Phone"
+                      id="phn"
+                    />
+                    <label for="phn">Phone</label>
+                    <n id="phn1" class="text-md-end text-danger"></n>
+                  </div>
+                </div>
+                <div class="col-12 wow fadeInUp" data-wow-delay="1.1s">
+                  <button
+                    class="btn btn-outline-light w-100 py-3"
+                    type="submit"
+                    id="btns"
+                  >
+                    Create Account
+                  </button>
+                </div>
+                <hr class="w-100 mb-0 bg-secondary wow fadeInUp" data-wow-delay="1.2s"/>
+                <div class="col-12 wow fadeInUp" data-wow-delay="1.3s" >
+                  <a class="btn btn-outline-light w-100 py-3" id="btn-login">
+                    Login
+                  </a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- register end  -->
+    <!-- login srt  -->
+    <div class="container" id="loginReal" style="display: none;">
+      <div class="login-img p-5">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-start text-secondary pe-3">
+              Login
+            </h6>
+            <h1 class="mb-4">
+              <span class="text-secondary">Travel</span> is only thing you buy that makes you <span class="text-secondary">Richer</span>
+            </h1>
+          </div>
+          <div class="col-lg-6">
+            <form id="form1">
+              <div class="row g-4">
+                <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
+                  <h6 class="mb-4  section-title bg-white px-3"><span class="text-secondary">TRAVEL</span> BLOGGER</h6>
+                </div>
+                <div class="col-12 wow fadeInUp" data-wow-delay="0.3s">
+                  <div class="form-floating">
+                    <input type="text" class="form-control bg-transparent" id="emailid" placeholder="Email Id">
+                    <label for="emailid">Email Id</label>
+                    <n class="text-danger" id="em"></n>                    
+                  </div>
+                </div>
+                <div class="col-12 wow fadeInUp" data-wow-delay="0.5s">
+                  <div class="form-floating position-relative">
+                    <input type="password" class="form-control bg-transparent" id="password" placeholder="Password">
+                    <label for="password">Password</label>
+                    <a class="btn position-absolute top-0 start-100 mt-2" style="margin-left: -50px;"><i class="fa fa-eye-slash fs-4"></i>
+                    </a>
+                    <n class="text-danger" id="pa"></n>
+                  </div>
+                </div>
+                <div class="col-12 wow fadeInUp" data-wow-delay="0.7s">
+                  <button type="submit" class="btn btn-outline-light w-100 py-3 fw-bold fs-4" id="btnw">Login</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- about-srt  -->
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div class="row g-5">
+          <div
+            class="col-lg-6 wow fadeInUp"
+            data-wow-delay="0.1s"
+            style="min-height: 400px"
+          >
+            <div class="position-relative h-100">
+              <img
+                src="./img/about.jpg"
+                class="img-fluid position-absolute w-100 h-100"
+                style="object-fit: cover"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+            <h6 class="section-title bg-white text-start text-secondary pe-3">
+              About Us
+            </h6>
+            <h1 class="mb-4">
+              Welcome to <span class="text-secondary">Tourist</span>
+            </h1>
+            <p>
+              Once upon a time, there was a period of change. It was a time full
+              of pain and emptiness. Some things came and went, but they
+              remained. It was a period filled with thoughts and reflections.
+            </p>
+            <p>
+              Once upon a time, there was a period of change. It was a time full
+              of pain and emptiness. Some things came and went, but they
+              remained. It was a period filled with thoughts and reflections,
+              but still, there was a lot of empty space and significant pain.
+            </p>
+            <div class="row gy-2 gx-4 mb-4">
+              <div class="col-sm-6">
+                <p class="mb-0">
+                  <i class="fa fa-arrow-right text-secondary me-2"></i>First
+                  Class Flights
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <p class="mb-0">
+                  <i class="fa fa-arrow-right text-secondary me-2"></i
+                  >Handpicked Hostels
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <p class="mb-0">
+                  <i class="fa fa-arrow-right text-secondary me-2"></i>5 Star
+                  Accommodations
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <p class="mb-0">
+                  <i class="fa fa-arrow-right text-secondary me-2"></i>Latest
+                  Model Vehicles
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <p class="mb-0">
+                  <i class="fa fa-arrow-right text-secondary me-2"></i>150
+                  Premium City Tours
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <p class="mb-0">
+                  <i class="fa fa-arrow-right text-secondary me-2"></i>24/7
+                  Service
+                </p>
+              </div>
+            </div>
+            <a class="btn btn-secondary py-3 px-5 mt-2" href="">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- about-end  -->
+
+    <!-- Serive-srt  -->
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+          <h6 class="section-title bg-white text-secondary px-3">Services</h6>
+          <h1 class="mb-5">Our Services</h1>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="service-item rounded pt-3">
+              <div class="p-4">
+                <i class="fa fa-3x fa-globe text-secondary mb-4"></i>
+                <h5>WorldWide Tours</h5>
+                <p>
+                  Some changes occurred, but there was still some transition and
+                  emptiness. It was a period of truth and pain, yet everything
+                  seemed to revolve around the same emptiness.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="service-item rounded pt-3">
+              <div class="p-4">
+                <i class="fa fa-3x fa-hotel text-secondary mb-4"></i>
+                <h5>Hotel Reservation</h5>
+                <p>
+                  Some changes occurred, but there was still some transition and
+                  emptiness. It was a period of truth and pain, yet everything
+                  seemed to revolve around the same emptiness.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="service-item rounded pt-3">
+              <div class="p-4">
+                <i class="fa fa-3x fa-user text-secondary mb-4"></i>
+                <h5>Travel Guides</h5>
+                <p>
+                  Some changes occurred, but there was still some transition and
+                  emptiness. It was a period of truth and pain, yet everything
+                  seemed to revolve around the same emptiness.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+            <div class="service-item rounded pt-3">
+              <div class="p-4">
+                <i class="fa fa-3x fa-cog text-secondary mb-4"></i>
+                <h5>Event Management</h5>
+                <p>
+                  Some changes occurred, but there was still some transition and
+                  emptiness. It was a period of truth and pain, yet everything
+                  seemed to revolve around the same emptiness.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="service-item rounded pt-3">
+              <div class="p-4">
+                <i class="fa fa-3x fa-globe text-secondary mb-4"></i>
+                <h5>WorldWide Tours</h5>
+                <p>
+                  Some changes occurred, but there was still some transition and
+                  emptiness. It was a period of truth and pain, yet everything
+                  seemed to revolve around the same emptiness.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="service-item rounded pt-3">
+              <div class="p-4">
+                <i class="fa fa-3x fa-hotel text-secondary mb-4"></i>
+                <h5>Hotel Reservation</h5>
+                <p>
+                  Some changes occurred, but there was still some transition and
+                  emptiness. It was a period of truth and pain, yet everything
+                  seemed to revolve around the same emptiness.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="service-item rounded pt-3">
+              <div class="p-4">
+                <i class="fa fa-3x fa-user text-secondary mb-4"></i>
+                <h5>Travel Guides</h5>
+                <p>
+                  Some changes occurred, but there was still some transition and
+                  emptiness. It was a period of truth and pain, yet everything
+                  seemed to revolve around the same emptiness.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+            <div class="service-item rounded pt-3">
+              <div class="p-4">
+                <i class="fa fa-3x fa-cog text-secondary mb-4"></i>
+                <h5>Event Management</h5>
+                <p>
+                  Some changes occurred, but there was still some transition and
+                  emptiness. It was a period of truth and pain, yet everything
+                  seemed to revolve around the same emptiness.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- service end  -->
+
+    <!-- dest srt  -->
+    <div class="container-xxl py-5 destination">
+      <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+          <h6 class="section-title bg-white text-center text-secondary px-3">
+            Destination
+          </h6>
+          <h1 class="mb-5">Popular Destination</h1>
+        </div>
+        <div class="row g-3">
+          <div class="col-lg-7 col-md-6">
+            <div class="row g-3">
+              <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
+                <a class="position-relative d-block overflow-hidden" href="">
+                  <img class="img-fluid" src="img/destination-1.jpg" alt="" />
+                  <div
+                    class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2"
+                  >
+                    30% OFF
+                  </div>
+                  <div
+                    class="bg-white text-secondary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2"
+                  >
+                    Thailand
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
+                <a href="" class="position-relative d-block overflow-hidden">
+                  <img src="./img/destination-2.jpg" class="img-fluid" />
+                  <div
+                    class="position-absolute top-0 start-0 bg-white text-danger fw-bold m-3 py-1 px-2"
+                  >
+                    20% OFF
+                  </div>
+                  <div
+                    class="position-absolute bottom-0 end-0 bg-white text-secondary fw-bold m-3 py-1 px-2"
+                  >
+                    Malaysia
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
+                <a href="" class="position-relative d-block overflow-hidden">
+                  <img src="./img/destination-3.jpg" class="img-fluid" />
+                  <div
+                    class="position-absolute top-0 start-0 bg-white text-danger fw-bold m-3 py-1 px-2"
+                  >
+                    35% OFF
+                  </div>
+                  <div
+                    class="position-absolute bottom-0 end-0 bg-white text-secondary fw-bold m-3 py-1 px-2"
+                  >
+                    Australia
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-5 col-md-6 wow zoomIn"
+            data-wow-delay="0.7s"
+            style="min-height: 350px"
+          >
+            <a href="" class="position-relative d-block overflow-hidden h-100">
+              <img
+                src="./img/destination-4.jpg"
+                alt=""
+                class="img-fluid position-absolute w-100 h-100"
+                style="object-fit: cover"
+              />
+              <div
+                class="position-absolute top-0 start-0 bg-white text-danger fw-bold m-3 py-1 px-2"
+              >
+                20% OFF
+              </div>
+              <div
+                class="position-absolute bottom-0 end-0 bg-white text-secondary fw-bold m-3 py-1 px-2"
+              >
+                Indonesia
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- dest end  -->
+
+    <!-- pack srt  -->
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+          <h6 class="section-title bg-white text-center text-secondary px-3">
+            Packages
+          </h6>
+          <h1 class="mb-5">Awesome Packages</h1>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="package-item">
+              <div class="overflow-hidden">
+                <img src="img/package-1.jpg" alt="" class="img-fluid" />
+              </div>
+              <div class="d-flex border-bottom">
+                <small class="flex-fill text-center border-end py-2"
+                  ><i class="fa fa-map-marker text-secondary me-2"></i
+                  >Thailand</small
+                >
+                <small class="flex-fill text-center border-end py-2"
+                  ><i class="fa fa-calendar-alt text-secondary me-2"></i>3
+                  days</small
+                >
+                <small class="flex-fill text-center py-2"
+                  ><i class="fa fa-user text-secondary me-2"></i>2 Person</small
+                >
+              </div>
+              <div class="text-center p-4">
+                <h3 class="mb-0">$149.00</h3>
+                <div class="mb-3">
+                  <small class="fa fa-star text-secondary"></small>
+                  <small class="fa fa-star text-secondary"></small>
+                  <small class="fa fa-star text-secondary"></small>
+                  <small class="fa fa-star text-secondary"></small>
+                  <small class="fa fa-star text-secondary"></small>
+                </div>
+                <p>
+                  At that time, there was a period of change and transition. It
+                  was a time of pain and emptiness, filled with things that came
+                  and went.
+                </p>
+                <div class="d-flex justify-content-center mb-2">
+                  <a
+                    href=""
+                    class="btn btn-secondary px-3 border-end"
+                    style="border-radius: 30px 0 0 30px"
+                    >Read More</a
+                  >
+                  <a
+                    href=""
+                    class="btn btn-secondary px-3"
+                    style="border-radius: 0 30px 30px 0"
+                    >Book Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="package-item">
+              <div class="overflow-hidden">
+                <img src="img/package-2.jpg" alt="" class="img-fluid" />
+              </div>
+              <div class="d-flex border-bottom">
+                <small class="flex-fill text-center border-end py-2"
+                  ><i class="fa fa-map-marker text-secondary me-2"></i
+                  >Indonesia</small
+                >
+                <small class="flex-fill text-center border-end py-2"
+                  ><i class="fa fa-calendar-alt text-secondary me-2"></i>3
+                  days</small
+                >
+                <small class="flex-fill text-center py-2"
+                  ><i class="fa fa-user text-secondary me-2"></i>2 Person</small
+                >
+              </div>
+              <div class="text-center p-4">
+                <h3 class="mb-0">$139.00</h3>
+                <div class="mb-3">
+                  <small class="fa fa-star text-secondary"></small>
+                  <small class="fa fa-star text-secondary"></small>
+                  <small class="fa fa-star text-secondary"></small>
+                  <small class="fa fa-star text-secondary"></small>
+                  <small class="fa fa-star text-secondary"></small>
+                </div>
+                <p>
+                  At that time, there was a period of change and transition. It
+                  was a time of pain and emptiness, filled with things that came
+                  and went.
+                </p>
+                <div class="d-flex justify-content-center mb-2">
+                  <a
+                    href=""
+                    class="btn btn-secondary px-3 border-end"
+                    style="border-radius: 30px 0 0 30px"
+                    >Read More</a
+                  >
+                  <a
+                    href=""
+                    class="btn btn-secondary px-3"
+                    style="border-radius: 0 30px 30px 0"
+                    >Book Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="package-item">
+              <div class="overflow-hidden">
+                <img src="img/package-3.jpg" alt="" class="img-fluid" />
+              </div>
+              <div class="d-flex border-bottom">
+                <small class="flex-fill text-center border-end py-2"
+                  ><i class="fa fa-map-marker text-secondary me-2"></i
+                  >Malaysia</small
+                >
+                <small class="flex-fill text-center border-end py-2"
+                  ><i class="fa fa-calendar-alt text-secondary me-2"></i>3
+                  days</small
+                >
+                <small class="flex-fill text-center py-2"
+                  ><i class="fa fa-user text-secondary me-2"></i>2 Person</small
+                >
+              </div>
+              <div class="text-center p-4">
+                <h3 class="mb-0">$189.00</h3>
+                <div class="mb-3">
+                  <small class="fa fa-star text-secondary"></small>
+                  <small class="fa fa-star text-secondary"></small>
+                  <small class="fa fa-star text-secondary"></small>
+                  <small class="fa fa-star text-secondary"></small>
+                  <small class="fa fa-star text-secondary"></small>
+                </div>
+                <p>
+                  At that time, there was a period of change and transition. It
+                  was a time of pain and emptiness, filled with things that came
+                  and went.
+                </p>
+                <div class="d-flex justify-content-center mb-2">
+                  <a
+                    href=""
+                    class="btn btn-secondary px-3 border-end"
+                    style="border-radius: 30px 0 0 30px"
+                    >Read More</a
+                  >
+                  <a
+                    href=""
+                    class="btn btn-secondary px-3"
+                    style="border-radius: 0 30px 30px 0"
+                    >Book Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- pack end  -->
+    <!-- book srt  -->
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div class="booking p-5">
+          <div class="row g-5 align-items-center">
+            <div class="col-md-6 text-white">
+              <h6 class="text-white text-uppercase">Booking</h6>
+              <h1 class="text-white mb-4">Online Booking</h1>
+              <p class="mb-4">
+                Once upon a time, there was a period of change. It was a time
+                full of pain and emptiness. Some things came and went, but they
+                remained. It was a period filled with thoughts and reflections.
+              </p>
+              <p class="mb-4">
+                Once upon a time, there was a period of change. It was a time
+                full of pain and emptiness. Some things came and went, but they
+                remained. It was a period filled with thoughts and reflections,
+                but still, there was a lot of empty space and significant pain.
+              </p>
+              <a href="" class="btn btn-outline-light py-3 px-5 mt-2"
+                >Read More</a
+              >
+            </div>
+            <div class="col-md-6">
+              <h1 class="text-white mb-4">Book A Tour</h1>
+              <form>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input
+                        type="text"
+                        class="form-control bg-transparent"
+                        id="name"
+                        placeholder="Your Name"
+                      />
+                      <label for="name" class="text-white">Your Name</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input
+                        type="text"
+                        class="form-control bg-transparent"
+                        id="email2"
+                        placeholder="Your Email"
+                      />
+                      <label for="email2" class="text-white">Your Email</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div
+                      class="form-floating date"
+                      id="date3"
+                      data-target-input="nearest"
+                    >
+                      <input
+                        type="text"
+                        class="form-control bg-transparent datetimepicker-input"
+                        id="datetime"
+                        placeholder="Date & Time"
+                        data-target="#date3"
+                        data-toggle="datetimepicker"
+                      />
+                      <label for="datetime" class="text-white"
+                        >Date & Time</label
+                      >
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <select
+                        class="form-select bg-transparent text-white"
+                        id="select1"
+                      >
+                        <option value="1" class="text-secondary">
+                          Destination 1
+                        </option>
+                        <option value="2" class="text-secondary">
+                          Destination 2
+                        </option>
+                        <option value="3" class="text-secondary">
+                          Destination 3
+                        </option>
+                      </select>
+                      <label for="select1" class="text-white"
+                        >Destination</label
+                      >
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-floating">
+                      <textarea
+                        id="textarea1"
+                        class="form-control bg-transparent"
+                        placeholder="Special Request"
+                        style="height: 100px"
+                      ></textarea>
+                      <label for="textarea1" class="text-white"
+                        >Special Request</label
+                      >
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <button
+                      class="btn btn-outline-light w-100 py-3"
+                      type="submit"
+                    >
+                      Book Now
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- book end  -->
+    <!-- process srt  -->
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div class="text-center pb-4 wow fadeInUp" data-wow-delay="0.1s">
+          <h6 class="section-title bg-white text-secondary text-center px-3">
+            Process
+          </h6>
+          <h1 class="mb-5">3 Easy Steps</h1>
+        </div>
+        <div class="row gx-4 gy-5 justify-content-center">
+          <div
+            class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp"
+            data-wow-delay="0.1s"
+          >
+            <div
+              class="position-relative border border-secondary pt-5 pb-4 px-4"
+            >
+              <div
+                class="d-inline-flex align-items-center justify-content-center bg-secondary rounded-circle position-absolute top-0 start-50 translate-middle shadow"
+                style="width: 100px; height: 100px"
+              >
+                <i class="fa fa-3x fa-globe text-white"></i>
+              </div>
+              <h5 class="mt-4">Choose A Destination</h5>
+              <hr class="w-25 mx-auto bg-secondary mb-1" />
+              <hr class="w-50 mx-auto bg-secondary mt-0" />
+              <p class="mb-0">
+                Once upon a time, there was a period of change. It was a time
+                full of pain and emptiness. Some things came and went, but they
+                remained. It was a period filled with thoughts and reflections.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp"
+            data-wow-delay="0.3s"
+          >
+            <div
+              class="position-relative border border-secondary pt-5 pb-4 px-4"
+            >
+              <div
+                class="d-inline-flex align-items-center justify-content-center bg-secondary rounded-circle position-absolute top-0 start-50 translate-middle shadow"
+                style="width: 100px; height: 100px"
+              >
+                <i class="fa fa-dollar-sign fa-3x text-white"></i>
+              </div>
+              <h5 class="mt-4">Pay Online</h5>
+              <hr class="w-25 mx-auto bg-secondary mb-1" />
+              <hr class="w-50 mx-auto bg-secondary mt-0" />
+              <p class="mb-0">
+                Once upon a time, there was a period of change. It was a time
+                full of pain and emptiness. Some things came and went, but they
+                remained. It was a period filled with thoughts and reflections.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp"
+            data-wow-delay="0.5s"
+          >
+            <div
+              class="position-relative border border-secondary pt-5 pb-4 px-4"
+            >
+              <div
+                class="d-inline-flex align-items-center justify-content-center bg-secondary rounded-circle position-absolute top-0 start-50 translate-middle shadow"
+                style="width: 100px; height: 100px"
+              >
+                <i class="fa fa-3x fa-plane text-white"></i>
+              </div>
+              <h5 class="mt-4">Fly Today</h5>
+              <hr class="w-25 mx-auto bg-secondary mb-1" />
+              <hr class="w-50 mx-auto bg-secondary mt-0" />
+              <p class="mb-0">
+                Once upon a time, there was a period of change. It was a time
+                full of pain and emptiness. Some things came and went, but they
+                remained. It was a period filled with thoughts and reflections.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- process end  -->
+
+    <!-- team srt  -->
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+          <h6 class="section-title bg-white text-center text-secondary px-3">
+            Travel Guide
+          </h6>
+          <h1 class="mb-5">Meet Our Guide</h1>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="team-item">
+              <div class="overflow-hidden">
+                <img src="./img/team-1.jpg" class="img-fluid" alt="" />
+              </div>
+              <div
+                class="position-relative d-flex justify-content-center"
+                style="margin-top: -20px"
+              >
+                <a href="" class="btn btn-square mx-1"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="" class="btn btn-square mx-1"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="" class="btn btn-square mx-1"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+              <div class="text-center p-4">
+                <h5 class="mb-0">Name</h5>
+                <small>Designation</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="team-item">
+              <div class="overflow-hidden">
+                <img src="./img/team-2.jpg" class="img-fluid" alt="" />
+              </div>
+              <div
+                class="position-relative d-flex justify-content-center"
+                style="margin-top: -20px"
+              >
+                <a href="" class="btn btn-square mx-1"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="" class="btn btn-square mx-1"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="" class="btn btn-square mx-1"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+              <div class="text-center p-4">
+                <h5 class="mb-0">Full Name</h5>
+                <small>Designation</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="team-item">
+              <div class="overflow-hidden">
+                <img src="./img/team-3.jpg" class="img-fluid" alt="" />
+              </div>
+              <div
+                class="position-relative d-flex justify-content-center"
+                style="margin-top: -20px"
+              >
+                <a href="" class="btn btn-square mx-1"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="" class="btn btn-square mx-1"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="" class="btn btn-square mx-1"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+              <div class="text-center p-4">
+                <h5 class="mb-0">Full Name</h5>
+                <small>Designation</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="team-item">
+              <div class="overflow-hidden">
+                <img src="./img/team-4.jpg" class="img-fluid" alt="" />
+              </div>
+              <div
+                class="position-relative d-flex justify-content-center"
+                style="margin-top: -20px"
+              >
+                <a href="" class="btn btn-square mx-1"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="" class="btn btn-square mx-1"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="" class="btn btn-square mx-1"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+              <div class="text-center p-4">
+                <h5 class="mb-0">Full Name</h5>
+                <small>Designation</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- team end  -->
+
+    <!-- srt  -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container">
+        <div class="text-center">
+          <h6 class="section-title bg-white text-center text-secondary px-3">
+            Testimonial
+          </h6>
+          <h1 class="mb-5">Our Clients Say!!!</h1>
+        </div>
+        <div class="swiper testimonial-carousel">
+          <div class="swiper-wrapper mb-5">
+              <div class="testimonial-item bg-white text-center border p-4 swiper-slide">
+                <img
+                  class="bg-white rounded-circle shadow p-1 mx-auto mb-3"
+                  src="img/testimonial-1.jpg"
+                  style="width: 80px; height: 80px"
+                />
+                <h5 class="mb-0">John Doe</h5>
+                <p>New York, USA</p>
+                <p class="mb-0">
+                  Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam
+                  amet diam et eos. Clita erat ipsum et lorem et sit.
+                </p>
+              </div>
+              <div class="testimonial-item bg-white text-center border p-4 swiper-slide">
+                <img
+                  class="bg-white rounded-circle shadow p-1 mx-auto mb-3"
+                  src="img/testimonial-2.jpg"
+                  style="width: 80px; height: 80px"
+                />
+                <h5 class="mb-0">John Doe</h5>
+                <p>New York, USA</p>
+                <p class="mt-2 mb-0">
+                  Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam
+                  amet diam et eos. Clita erat ipsum et lorem et sit.
+                </p>
+              </div>
+              <div class="testimonial-item bg-white text-center border p-4 swiper-slide">
+                <img
+                  class="bg-white rounded-circle shadow p-1 mx-auto mb-3"
+                  src="img/testimonial-3.jpg"
+                  style="width: 80px; height: 80px"
+                />
+                <h5 class="mb-0">John Doe</h5>
+                <p>New York, USA</p>
+                <p class="mt-2 mb-0">
+                  Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam
+                  amet diam et eos. Clita erat ipsum et lorem et sit.
+                </p>
+              </div>
+              <div class="testimonial-item bg-white text-center border p-4 swiper-slide">
+                <img
+                  class="bg-white rounded-circle shadow p-1 mx-auto mb-3"
+                  src="img/testimonial-4.jpg"
+                  style="width: 80px; height: 80px"
+                />
+                <h5 class="mb-0">John Doe</h5>
+                <p>New York, USA</p>
+                <p class="mt-2 mb-0">
+                  Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam
+                  amet diam et eos. Clita erat ipsum et lorem et sit.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+      </div>
+    </div>
+    <!-- end  -->
+
+    <!-- footer srt  -->
+    <div
+      class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn"
+      data-wow-delay="0.1s"
+    >
+      <div class="container py-5">
+        <div class="row g-5">
+          <div class="col-lg-3 col-md-6">
+            <h4 class="text-white mb-3">Company</h4>
+            <a class="btn btn-link" href="">About Us</a>
+            <a class="btn btn-link" href="">Contact Us</a>
+            <a class="btn btn-link" href="">Privacy Policy</a>
+            <a class="btn btn-link" href="">Terms & Condition</a>
+            <a class="btn btn-link" href="">FAQs & Help</a>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="text-white">Contact</h4>
+            <p class="mb-2">
+              <i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA
+            </p>
+            <p class="mb-2">
+              <i class="fa fa-phone-alt me-3"></i>+012 345 67890
+            </p>
+            <p class="mb-2">
+              <i class="fa fa-envelope me-3"></i>info@gmail.com
+            </p>
+            <div class="d-flex pt-2">
+              <a href="" class="btn btn-social btn-outline-light"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="" class="btn btn-social btn-outline-light"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="" class="btn btn-social btn-outline-light"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="" class="btn btn-social btn-outline-light"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="text-white mb-3">Gallery</h4>
+            <div class="row g-2 pt-2">
+              <div class="col-4">
+                <img src="./img/package-1.jpg" alt="" class="img-fluid" />
+              </div>
+              <div class="col-4">
+                <img src="./img/package-1.jpg" alt="" class="img-fluid" />
+              </div>
+              <div class="col-4">
+                <img src="./img/package-1.jpg" alt="" class="img-fluid" />
+              </div>
+              <div class="col-4">
+                <img src="./img/package-1.jpg" alt="" class="img-fluid" />
+              </div>
+              <div class="col-4">
+                <img src="./img/package-1.jpg" alt="" class="img-fluid" />
+              </div>
+              <div class="col-4">
+                <img src="./img/package-1.jpg" alt="" class="img-fluid" />
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="text-white mb-3">Newsletter</h4>
+            <p>Pain is to be justly loved, the chosen one is truly chosen.</p>
+            <div class="position-relative mx-auto" style="max-width: 400px">
+              <input
+                type="text"
+                class="form-control border-secondary w-100 py-3 ps-4 pe-5"
+                placeholder="Your Email"
+              />
+              <button
+                type="button"
+                class="btn btn-secondary position-absolute top-0 end-0 mt-2 me-2 py-2"
+              >
+                SignUp
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+              &copy;<a class="border-bottom" href="">Your Site Name</a>, All
+              Right Reserved. Designed By
+              <a class="border-bottom" href="">HTML Codex</a>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <div class="footer-menu">
+                <a href="">Home</a>
+                <a href="">Cookies</a>
+                <a href="">Help</a>
+                <a href="">FQAs</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer end  -->
+
+    <a href="" class="btn btn-lg btn-secondary btn-lg-square back-to-top pt-2"
+      ><i class="fa-solid fa-arrow-up"></i
+    ></a>
+
+    <script
+      src="https://kit.fontawesome.com/7f1a9230de.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="./swiper-11.1.8/package/swiper-bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        "user strict";
+        function hs() {
+          setTimeout(() => {
+            var s = document.getElementById("spinner");
+            if (s) {
+              s.classList.remove("show");
+            }
+          }, 1);
+        }
+        hs();
+        if (typeof WOW === "function") {
+          new WOW().init();
+        }
+        window.addEventListener("scroll", () => {
+          var n = document.querySelector(".navbar");
+          if (window.scrollY > 45) {
+            n.classList.add("sticky-top", "shadow-sm");
+          } else {
+            n.classList.remove("sticky-top", "shadow-sm");
+          }
+        });
+        function m() {
+          var d = document.querySelectorAll(".dropdown");
+          // console.log(d)
+          d.forEach((x) => {
+            var dt = x.querySelector(".dropdown-toggle");
+            var dm = x.querySelector(".dropdown-menu");
+            x.addEventListener("mouseenter", () => {
+              x.classList.add("show");
+              if (dt) {
+                dt.setAttribute("aria-expanded", "true");
+              }
+              if (dm) {
+                dm.classList.add("show");
+              }
+            });
+            x.addEventListener("mouseleave", () => {
+              x.classList.remove("show");
+              if (dt) {
+                dt.setAttribute("aria-expanded", "false");
+              }
+              if (dm) {
+                dm.classList.remove("show");
+              }
+            });
+          });
+        }
+        function dpb() {
+          if (window.matchMedia("(min-width:992px)").matches) {
+            m();
+          } else {
+            var d = document.querySelectorAll(".dropdown");
+            d.forEach((x) => {
+              x.removeEventListener("mouseenter", m);
+              x.removeEventListener("mouseleave", m);
+            });
+          }
+        }
+        window.addEventListener("load", dpb);
+        window.addEventListener("resize", dpb);
+        var btb = document.querySelector(".back-to-top");
+        if (btb) {
+          window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+              btb.style.display = "block";
+            } else {
+              btb.style.display = "none";
+            }
+          });
+          btb.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          });
+        }
+        var t = document.querySelector(".navbar-toggler");
+        t.setAttribute("aria-expanded", "false");
+        t.addEventListener("click", (e) => {
+          e.preventDefault();
+          var men = document.querySelector("#toGGle");
+          if (t.ariaExpanded == "false") {
+            t.ariaExpanded = "true";
+          } else {
+            t.ariaExpanded = "false";
+          }
+          men.classList.toggle("show");
+        });
+
+        const swip = new Swiper('.swiper',{
+          slidesPerView: 3,
+          spaceBetween: 30,
+          direction: 'horizontal',
+          loop: true,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+          }
+        });
+        var btn = document.getElementById("register-btn");
+        var cnt = document.getElementById("login");
+        var btn1 = document.getElementById("btns");
+        var btn2 = document.getElementById("btn-login")
+        var cnt2 = document.getElementById("loginReal")
+        const mainContent = document.querySelectorAll('.container-fluid');
+        const netcon=document.querySelectorAll(".container-xxl");
+        var eye=document.getElementsByClassName("fa-eye-slash")[0];
+        var eye1=document.getElementsByClassName("fa-eye-slash")[1];
+
+
+        // console.log(btn1.value)
+        function display(){
+          cnt2.style.display="none";
+          cnt2.classList.remove("card");
+          cnt.style.display="block";
+          cnt.classList.add("card");
+          mainContent.forEach((x)=>x.classList.add('blur'));
+          netcon.forEach((x)=>x.classList.add('blur'));
+          document.body.style.overflow='hidden';
+        }
+        function display_l(){
+          cnt.style.display="none";
+          cnt.classList.remove("card");
+          cnt2.style.display="block";
+          cnt2.classList.add("card");
+          mainContent.forEach((x)=>x.classList.add('blur'));
+          netcon.forEach((x)=>x.classList.add('blur'));
+          document.body.style.overflow='hidden';
+        }
+        function display_non(){
+          cnt.style.display="none";
+          cnt.classList.remove("card");
+          mainContent.forEach((x)=>x.classList.remove('blur'));
+          netcon.forEach((x)=>x.classList.remove('blur'));
+          document.body.style.overflow="auto";
+        }
+        function display_non_l(){
+          cnt2.style.display="none";
+          cnt2.classList.remove("card");
+          mainContent.forEach((x)=>x.classList.remove('blur'));
+          netcon.forEach((x)=>x.classList.remove('blur'));
+          document.body.style.overflow="auto";
+        }
+        btn.addEventListener('click',(e)=>{
+          e.stopPropagation()
+          display()
+        });
+        btn2.addEventListener('click',(e)=>{
+          e.stopPropagation()
+          display_l()
+        })
+        eye.addEventListener('click',(e)=>{
+          e.stopPropagation()
+          display()
+        });
+        eye1.addEventListener('click',(e)=>{
+          e.stopPropagation()
+          display_l()
+        });
+
+        document.addEventListener('click',(e)=>{
+          if(!cnt.contains(e.target) && e.target != btn && !cnt2.contains(e.target)){
+              display_non()
+          }
+        });
+
+        document.addEventListener('click',(e)=>{
+          if(!cnt2.contains(e.target) && e.target != btn2 && !cnt.contains(e.target)){
+              display_non_l()
+          }
+        });
+       
+
+        
+        
+        const form = document.getElementById("form")
+        form.addEventListener("submit",(e)=>{
+          e.preventDefault()
+          var name1=document.getElementById("name1")
+          var email1=document.getElementById("email1")
+          var pass1 = document.getElementById("pass1")
+          var cp1=document.getElementById("cp1")
+          var phn1 = document.getElementById("phn1")
+
+          const name=document.getElementById("name").value;
+          const email=document.getElementById("email").value;
+          const pass=document.getElementById("pass").value;
+          const cp=document.getElementById("cp").value;
+          const phn=document.getElementById("phn").value;
+
+          const p1 = /^[a-z0-9][\w\.]+\@\w+?(\.\w+){1,}$/gi;
+          const p2 = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/;
+          const p3 = /^(\+\d{1,3}[- ]?)?\d{10}$/;
+
+          var data=JSON.parse(localStorage.getItem("data")) || [];
+
+          function check(){
+            if(pass!=cp){
+              cp1.innerHTML="Password doesnot match";
+              return false
+            }
+            else{
+              cp1.innerHTML=""
+            }
+            if(data.some((x)=>x.email===email)){
+              email1.innerHTML="Email Already Exist";
+              return false
+            }
+            else{
+              email1.innerHTML=""
+            }
+            if(data.some((x)=>x.phn===phn)){
+              phn1.innerHTML="Phone no Already Exist";
+              return false
+            }
+            else{
+              phn1.innerHTML=""
+            }
+            if(!p1.test(email)){
+              email1.innerHTML="Please Enter a Valid Email"
+              return false
+            }
+            else{
+              email1.innerHTML=""
+            }
+            if(!p2.test(pass)){
+              pass1.innerHTML="Please Enter a Valid Password"
+              return false
+            }
+            else{
+              pass1.innerHTML=""
+            }
+            if(!p3.test(phn)){
+              phn1.innerHTML="Please Enter a 10-digit Phone No"
+              return false
+            }
+            else{
+              phn1.innerHTML=""
+            }
+            return true
+          }
+          
+          if(check()){
+          const obj={
+            username:name,
+            email:email,
+            pass:pass,
+            phn:phn
+          }
+          data.push(obj);
+          localStorage.setItem("data",JSON.stringify(data))
+          name.value=""
+          email.value=""
+          pass.value=""
+          cp.value=""
+          phn.value=""
+          const userConfirmed = confirm(
+              "Your account has been created successfully! Do you want to visit the homepage?"
+            );
+            if (userConfirmed) {
+              window.location.href = "homepage.html";
+            }
+          }
+          
+        });
+
+        var frm1 = document.getElementById("form1")
+        frm1.addEventListener('submit',(e)=>{
+            e.preventDefault()
+            const email=document.getElementById("emailid").value;
+            const pass=document.getElementById("password").value;
+            var email1=document.getElementById("em");
+            var pass1=document.getElementById("pa");
+            const data=JSON.parse(localStorage.getItem('data')) || [];
+            var userinfo=[];
+            function check(){
+              const k=data.find((x)=>x.email===email)
+              
+              if(!(k.email===email)){
+                email1.innerHTML="Email Doesnot Exist"
+                return false
+              }
+              else{
+                email1.innerHTML=""
+              }
+              if(!(k.pass===pass)){
+                pass1.innerHTML="Incorrect Password"
+                return false
+              }
+              else{
+                pass1.innerHTML=""
+              }
+              return true
+            }
+            if(check()){
+              obj={
+                email:email,
+                pass:pass
+              }
+              alert("Login Successfully")
+              userinfo.push(obj)
+              localStorage.setItem("userinfo",JSON.stringify(userinfo))
+            }
+        });
+        var eye=document.getElementsByClassName("fa-eye-slash")[0];
+        var cp=document.getElementById('cp')
+        const pass=document.getElementById('pass')
+        var eye1=document.getElementsByClassName("fa-eye-slash")[1];
+        const pass1=document.getElementById('password')
+
+        function Eye(x,y,z){
+          x.addEventListener('click',(e)=>{
+            e.preventDefault()
+            if(y.type==="password"){
+              y.type="text"
+              x.classList.remove("fa-eye-slash")
+              x.classList.add("fa-eye")
+              z.type='text'
+            }
+            else{
+              y.type="password"
+              x.classList.remove("fa-eye")
+              x.classList.add("fa-eye-slash")
+              z.type='password'
+            }
+          });
+        }
+        Eye(eye,pass,cp);
+        Eye(eye1,pass1);
+      });
+    </script>
+  </body>
+</html>
