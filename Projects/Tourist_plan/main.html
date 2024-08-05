@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Tourist</title>
+    <link rel="icon" type="image/png" href="./img/web.png">
     <link
       rel="stylesheet"
       href="../../bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css"
@@ -127,6 +128,11 @@
       font-weight: normal;
       border-radius: 0px;
     }
+
+    .dropdown-item:focus{
+      background: #86b817 !important;
+    }
+    
 
     .navbar-light .navbar-nav .nav-link {
       font-family: "Nunito", sans-serif;
@@ -464,43 +470,47 @@
         </button>
         <div class="collapse navbar-collapse" id="toGGle">
           <div class="navbar-nav ms-auto py-0">
-            <a href="home.html" class="nav-item nav-link active">Home</a>
-            <a href="" class="nav-item nav-link">About</a>
-            <a href="" class="nav-item nav-link">Services</a>
-            <a href="" class="nav-item nav-link">Packages</a>
+            <a href="#" class="nav-item nav-link active" id="home">Home</a>
+            <a href="#" class="nav-item nav-link" id="about">About</a>
+            <a href="#" class="nav-item nav-link" id="service">Services</a>
+            <a href="#" class="nav-item nav-link" id="package">Packages</a>
             <div class="nav-item dropdown">
               <a
-                href=""
+                href="#"
                 class="nav-link dropdown-toggle"
                 data-bs-toggle="dropdown"
+                id="pages"
                 >Pages</a
               >
               <div class="dropdown-menu m-0">
-                <a href="" class="dropdown-item">Destination</a>
-                <a href="" class="dropdown-item">Booking</a>
-                <a href="" class="dropdown-item">Travel Guides</a>
-                <a href="" class="dropdown-item">Testimonial</a>
+                <a href="#" class="dropdown-item" id="dest">Destination</a>
+                <a href="#" class="dropdown-item" id="book">Booking</a>
+                <a href="#" class="dropdown-item" id="travel">Travel Guides</a>
+                <a href="#" class="dropdown-item" id="testi">Testimonial</a>
               </div>
             </div>
-            <a href="" class="nav-item nav-link">Contact</a>
+            <a href="#" class="nav-item nav-link" id="contact">Contact</a>
+            <div class="d-none nav-item nav-link" id="name_item">
+              <a>Hi, <Span class="text-bg-secondary" id="username"></Span></a>
+            </div>
           </div>
           <button class="btn btn-secondary rounded-pill py-2 px-4" id="register-btn"
             >Register</button
           >
-        </div>
+        </div> 
       </nav>
       <div class="container-fluid py-5 mb-5 hero-header">
         <div class="container py-5">
           <div class="row justify-content-center py-5">
             <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
-              <h1 class="display-3 text-white mb-3 animated slideInDown">
+              <h1 class="display-3 text-white mb-3 animated slideInDown" id="head">
                 Enjoy Your Vacation With us
               </h1>
-              <p class="fs-4 text-white mb-4 animated slideInDown">
+              <p class="fs-4 text-white mb-4 animated slideInDown" id="head1">
                 Time was a period of change at Clita, where both time and place
                 were centered on the essence of 'lorem sit'.
               </p>
-              <div class="position-relative w-75 mx-auto animated slideInDown">
+              <div class="position-relative w-75 mx-auto animated slideInDown" id="head2">
                 <input
                   type="text"
                   class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5"
@@ -1802,13 +1812,13 @@
         const form = document.getElementById("form")
         form.addEventListener("submit",(e)=>{
           e.preventDefault()
-          var name1=document.getElementById("name1")
+          
           var email1=document.getElementById("email1")
           var pass1 = document.getElementById("pass1")
           var cp1=document.getElementById("cp1")
           var phn1 = document.getElementById("phn1")
 
-          const name=document.getElementById("name").value;
+          const name=document.getElementById("name1").value;
           const email=document.getElementById("email").value;
           const pass=document.getElementById("pass").value;
           const cp=document.getElementById("cp").value;
@@ -1875,18 +1885,24 @@
           }
           data.push(obj);
           localStorage.setItem("data",JSON.stringify(data))
+          const userConfirmed = confirm(
+              "Your account has been created successfully! Do you want to visit the homepage?"
+            );
+            if (userConfirmed) {
+              btn=document.querySelector("#register-btn")
+              name_item=document.querySelector("#name_item")
+              user1=document.getElementById("username")
+              btn.classList.toggle("d-none")
+              user1.innerHTML=name
+              name_item.classList.toggle("d-none")
+              display_non();            
+            }
+          }
           name.value=""
           email.value=""
           pass.value=""
           cp.value=""
           phn.value=""
-          const userConfirmed = confirm(
-              "Your account has been created successfully! Do you want to visit the homepage?"
-            );
-            if (userConfirmed) {
-              window.location.href = "homepage.html";
-            }
-          }
           
         });
 
@@ -1898,9 +1914,9 @@
             var email1=document.getElementById("em");
             var pass1=document.getElementById("pa");
             const data=JSON.parse(localStorage.getItem('data')) || [];
+            const k=data.find((x)=>x.email===email)
             var userinfo=[];
             function check(){
-              const k=data.find((x)=>x.email===email)
               
               if(!(k.email===email)){
                 email1.innerHTML="Email Doesnot Exist"
@@ -1926,7 +1942,15 @@
               alert("Login Successfully")
               userinfo.push(obj)
               localStorage.setItem("userinfo",JSON.stringify(userinfo))
+              var btn=document.querySelector("#register-btn")
+              var dis=document.querySelector("#name_item")
+              var us1=document.getElementById("username")
+              us1.innerHTML=k.username
+              btn.classList.toggle("d-none")
+              dis.classList.toggle("d-none")
+              display_non_l();
             }
+            
         });
         var eye=document.getElementsByClassName("fa-eye-slash")[0];
         var cp=document.getElementById('cp')
@@ -1934,25 +1958,76 @@
         var eye1=document.getElementsByClassName("fa-eye-slash")[1];
         const pass1=document.getElementById('password')
 
-        function Eye(x,y,z){
+        function Eye(x,y,z=null){
           x.addEventListener('click',(e)=>{
             e.preventDefault()
             if(y.type==="password"){
               y.type="text"
               x.classList.remove("fa-eye-slash")
               x.classList.add("fa-eye")
-              z.type='text'
+              z.type="text"
             }
             else{
               y.type="password"
               x.classList.remove("fa-eye")
               x.classList.add("fa-eye-slash")
-              z.type='password'
+              z.type="password"
             }
           });
         }
         Eye(eye,pass,cp);
         Eye(eye1,pass1);
+
+        var home=document.querySelector("#home")
+        var abt=document.querySelector("#about")
+        var ser=document.querySelector("#service")
+        var pack=document.querySelector("#package")
+        var page=document.querySelector("#pages")
+        var dest=document.querySelector("#dest")
+        var book=document.querySelector("#book")
+        var travel=document.querySelector("#travel")
+        var testi=document.querySelector("#testi")
+        var contact = document.querySelector("#contact")
+
+        var head=document.getElementById("head")
+        var head2=document.getElementById("head2")
+        var btn=document.getElementById("register-btn")
+        var user2=document.getElementById("username")
+        
+        function nav(act,text,aclass=false){
+          document.getElementById("spinner").classList.add("show");
+          [home,abt,ser,pack,page,contact].forEach(x=>{
+            if(x!==act){
+              x.classList.remove("active");
+            }
+          });
+          act.classList.add("active")
+          head.innerHTML=text
+          if(aclass){
+            head2.classList.add("d-none")
+          }
+          else{
+            head2.classList.remove("d-none")
+          }
+          
+          setTimeout(()=>{
+            document.getElementById("spinner").classList.remove("show");
+          },500)
+
+          btn.style.display="none";
+          if(user2.innerText.trim()===""){
+            btn.style.display="block"
+          }
+        }
+        home.addEventListener("click",()=>nav(home,"Enjoy Your Vacation With Us"));
+        abt.addEventListener("click",()=>nav(abt,"About Us",true));
+        ser.addEventListener("click",()=>nav(ser,"Services",true));
+        pack.addEventListener("click",()=>nav(pack,"Packages",true));
+        dest.addEventListener("click",()=>nav(page,"Destination",true));
+        book.addEventListener("click",()=>nav(page,"Booking",true));
+        travel.addEventListener("click",()=>nav(page,"Guides",true));
+        testi.addEventListener("click",()=>nav(page,"Testimonial",true));
+        contact.addEventListener("click",()=>nav(contact,"Contact",true));
       });
     </script>
   </body>
