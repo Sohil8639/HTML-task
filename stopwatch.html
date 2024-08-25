@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <style>
+        h1{
+            display: inline;
+        } 
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+    <div class="row g-2 text-center">
+    <div class="col-sm-12">
+        <h1 id="min">00</h1>
+        <span class="fs-1">:</span>
+        <h1 id="sec">00</h1>
+        <span class="fs-1">:</span>
+        <h1 id="msec">00</h1>
+    </div>
+    <div class="col-sm-12">
+        <button id="strt" class="btn btn-primary px-2">Start</button>
+        <button id="stp" class="btn btn-danger px-2" >Stop</button>
+        <button id="rst" type="reset" class="btn btn-dark px-2" >Reset</button>
+    </div>
+    </div>
+    </div>
+    <script>
+        let i=0,j=0,k=0;
+        document.getElementById("strt").addEventListener("click",()=>{
+            var x=setInterval(()=>{
+                if(i>59){
+                    if(j>58){
+                        if(k<9){
+                            document.getElementById("min").innerHTML="0"+ ++k;
+                        }
+                        else{
+                            document.getElementById("min").innerHTML=++k;
+                        }
+                        j=0
+                    }
+                    else{
+                        if(j<9){
+                            document.getElementById("sec").innerHTML="0"+ ++j
+                        }
+                        else{
+                            document.getElementById("sec").innerHTML=++j;
+                        }
+                    }
+                    i=0
+                }
+                else{
+                    if(i<9){
+                        document.getElementById("msec").innerHTML="0"+i++
+                    }
+                    else{
+                        document.getElementById("msec").innerHTML=i++
+                    }  
+                } 
+            },100)
+            document.getElementById("stp").addEventListener("click",()=>{
+                clearInterval(x)
+            });
+            document.getElementById("rst").addEventListener("click",()=>{
+                location.reload()
+            })
+        });
+        
+    </script>
+</body>
+</html>
