@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <style>
+        /* *{
+            border: 1px solid;
+        } */
+        img{
+            padding: 10%;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="text btn-"></div>
+    <script>
+        let d2=document.createElement("div")
+        let d1=document.createElement("div")
+        d1.classList.add("container-fluid")
+        d2.classList.add("container-fluid")
+        d2.classList.add("d-flex")
+        d2.classList.add("gap-2")
+        d2.classList.add("my-2")
+        d2.classList.add("flex-row-reverse")
+        document.body.appendChild(d1)
+        let b1=document.createElement("button")
+        let b2=document.createElement("button")
+        let b3=document.createElement("button")
+        let b4=document.createElement("button")
+        let b5=document.createElement("button")
+        let b6=document.createElement("button")
+        b1.classList.add("btn")
+        b2.classList.add("btn")
+        b3.classList.add("btn")
+        b4.classList.add("btn")
+        b5.classList.add("btn")
+        b6.classList.add("btn")
+        b1.classList.add("btn-outline-dark")
+        b2.classList.add("btn-outline-dark")
+        b3.classList.add("btn-outline-dark")
+        b4.classList.add("btn-outline-dark")
+        b5.classList.add("btn-outline-dark")
+        b6.classList.add("btn-outline-dark")
+
+
+        b1.textContent="0-100"
+        b2.textContent="101-200"
+        b3.textContent="201-300"
+        b4.textContent="301-400"
+        b5.textContent="401-500"
+        b6.textContent="500 above"
+        d2.append(b6)
+        d2.append(b5)
+        d2.append(b4)
+        d2.append(b3)
+        d2.append(b2)
+        d2.append(b1)
+
+        d1.appendChild(d2)
+        let data=fetch("https://fakestoreapi.com/products")
+        data.then((e)=>e.json().then((e)=>{
+            for(i of e){
+                
+                
+                let h3=document.createElement("h3")
+                let img=document.createElement("img")
+                let d00=document.createElement("div")
+                d00.classList.add("card1")
+                d00.classList.add("border")
+                d00.classList.add("p-2")
+                d00.classList.add("row")
+                let d01=document.createElement("div")
+                d01.classList.add("col-md-4")
+                let d02=document.createElement("div")
+                let p=document.createElement("p")
+                let div21=document.createElement("div")
+                let rate=document.createElement("p")
+                div21.appendChild(rate)
+                rate.innerHTML=i.rating.rate
+                div21.classList.add("d-flex")
+                for(j=0;j<Math.round(i.rating.rate);j++){
+                    let i1=document.createElement("i")
+                    rate.appendChild(i1)
+                    i1.classList.add("fa")
+                    i1.classList.add("fa-star")
+                }
+                for(j=0;j<5-Math.round(i.rating["rate"]);j++){
+                    let i1=document.createElement("i")
+                    rate.appendChild(i1)
+                    i1.classList.add("fa")
+                    i1.classList.add("fa-star-o")
+                    // i1.classList.add("")
+                }
+                
+                d02.classList.add("col-md-8")
+                h3.innerHTML=i.title
+                img.setAttribute("src",i.image)
+                img.setAttribute("height","100%")
+                img.setAttribute("width","100%")
+
+                p.innerHTML=i.description
+                p.classList.add("col-lg")
+                let div22=document.createElement("div")
+                div22.classList.add("d-flex")
+                div22.classList.add("my-lg-5")
+                div22.classList.add("my-md-3")
+                let head2=document.createElement("h2")
+                let head21=document.createElement("h2")
+                div22.appendChild(head2)
+                div22.appendChild(head21)
+                let i2=document.createElement("i")
+                i2.classList.add("fa-dollar-sign")
+                head2.appendChild(i2)
+                head21.innerHTML=i.price
+
+                let div33=document.createElement("div")
+                div33.classList.add("d-flex")
+                div33.classList.add("flex-column")
+                div33.classList.add("justify-item-center")
+                div33.classList.add("align-items-center")
+                div33.classList.add("gap-2")
+                let btn=document.createElement("button")
+                let btn1=document.createElement("button")
+                div33.appendChild(btn)
+                div33.appendChild(btn1)
+                btn.textContent="Buy"
+                btn.classList.add("btn")
+                btn.classList.add("text-center")
+                btn.classList.add("btn-secondary")
+                btn.classList.add("w-75")
+                btn1.textContent="Add to cart"
+                btn1.classList.add("btn")
+                btn1.classList.add("text-center")
+                btn1.classList.add("btn-secondary")
+                btn1.classList.add("w-75")
+
+
+                d1.appendChild(d00)
+                d00.appendChild(d01)
+                d00.appendChild(d02)
+                d01.appendChild(img)
+                d02.appendChild(h3)
+                d02.appendChild(div21)
+                d02.appendChild(div22)
+                d02.appendChild(p)
+                d02.appendChild(div33)
+            
+
+
+                
+
+            }
+            card=document.getElementsByClassName("card1")
+            b1.addEventListener('click',()=>{
+                for(i of card){
+                    i.classList.add("d-none")
+                }
+                for(i of e){
+                    if(i.price<=100){
+                        let h3=document.createElement("h3")
+                        let img=document.createElement("img")
+                        let d00=document.createElement("div")
+                        d00.classList.add("card1")
+                        d00.classList.add("border")
+                        d00.classList.add("p-2")
+                        d00.classList.add("row")
+                        let d01=document.createElement("div")
+                        d01.classList.add("col-md-4")
+                        let d02=document.createElement("div")
+                        let p=document.createElement("p")
+                        let div21=document.createElement("div")
+                        let rate=document.createElement("p")
+                        div21.appendChild(rate)
+                        rate.innerHTML=i.rating.rate
+                        div21.classList.add("d-flex")
+                        for(j=0;j<Math.round(i.rating.rate);j++){
+                            let i1=document.createElement("i")
+                            rate.appendChild(i1)
+                            i1.classList.add("fa")
+                            i1.classList.add("fa-star")
+                        }
+                        for(j=0;j<5-Math.round(i.rating["rate"]);j++){
+                            let i1=document.createElement("i")
+                            rate.appendChild(i1)
+                            i1.classList.add("fa")
+                            i1.classList.add("fa-star-o")
+                            // i1.classList.add("")
+                        }
+                        
+                        d02.classList.add("col-md-8")
+                        h3.innerHTML=i.title
+                        img.setAttribute("src",i.image)
+                        img.setAttribute("height","100%")
+                        img.setAttribute("width","100%")
+
+                        p.innerHTML=i.description
+                        p.classList.add("col-lg")
+                        let div22=document.createElement("div")
+                        div22.classList.add("d-flex")
+                        div22.classList.add("my-lg-5")
+                        div22.classList.add("my-md-3")
+                        let head2=document.createElement("h2")
+                        let head21=document.createElement("h2")
+                        div22.appendChild(head2)
+                        div22.appendChild(head21)
+                        let i2=document.createElement("i")
+                        i2.classList.add("fa-dollar-sign")
+                        head2.appendChild(i2)
+                        head21.innerHTML=i.price
+
+                        let div33=document.createElement("div")
+                        div33.classList.add("d-flex")
+                        div33.classList.add("flex-column")
+                        div33.classList.add("justify-item-center")
+                        div33.classList.add("align-items-center")
+                        div33.classList.add("gap-2")
+                        let btn=document.createElement("button")
+                        let btn1=document.createElement("button")
+                        div33.appendChild(btn)
+                        div33.appendChild(btn1)
+                        btn.textContent="Buy"
+                        btn.classList.add("btn")
+                        btn.classList.add("text-center")
+                        btn.classList.add("btn-secondary")
+                        btn.classList.add("w-75")
+                        btn1.textContent="Add to cart"
+                        btn1.classList.add("btn")
+                        btn1.classList.add("text-center")
+                        btn1.classList.add("btn-secondary")
+                        btn1.classList.add("w-75")
+
+
+                        d1.appendChild(d00)
+                        d00.appendChild(d01)
+                        d00.appendChild(d02)
+                        d01.appendChild(img)
+                        d02.appendChild(h3)
+                        d02.appendChild(div21)
+                        d02.appendChild(div22)
+                        d02.appendChild(p)
+                        d02.appendChild(div33)
+                    }
+                }
+            })
+            b2.addEventListener('click',()=>{
+                for(i of card){
+                    i.classList.add("d-none")
+                }
+                for(i of e){
+                    if(i.price>100 && i.price<=200){
+                        let h3=document.createElement("h3")
+                        let img=document.createElement("img")
+                        let d00=document.createElement("div")
+                        d00.classList.add("card1")
+                        d00.classList.add("border")
+                        d00.classList.add("p-2")
+                        d00.classList.add("row")
+                        let d01=document.createElement("div")
+                        d01.classList.add("col-md-4")
+                        let d02=document.createElement("div")
+                        let p=document.createElement("p")
+                        let div21=document.createElement("div")
+                        let rate=document.createElement("p")
+                        div21.appendChild(rate)
+                        rate.innerHTML=i.rating.rate
+                        div21.classList.add("d-flex")
+                        for(j=0;j<Math.round(i.rating.rate);j++){
+                            let i1=document.createElement("i")
+                            rate.appendChild(i1)
+                            i1.classList.add("fa")
+                            i1.classList.add("fa-star")
+                        }
+                        for(j=0;j<5-Math.round(i.rating["rate"]);j++){
+                            let i1=document.createElement("i")
+                            rate.appendChild(i1)
+                            i1.classList.add("fa")
+                            i1.classList.add("fa-star-o")
+                            // i1.classList.add("")
+                        }
+                        
+                        d02.classList.add("col-md-8")
+                        h3.innerHTML=i.title
+                        img.setAttribute("src",i.image)
+                        img.setAttribute("height","100%")
+                        img.setAttribute("width","100%")
+
+                        p.innerHTML=i.description
+                        p.classList.add("col-lg")
+                        let div22=document.createElement("div")
+                        div22.classList.add("d-flex")
+                        div22.classList.add("my-lg-5")
+                        div22.classList.add("my-md-3")
+                        let head2=document.createElement("h2")
+                        let head21=document.createElement("h2")
+                        div22.appendChild(head2)
+                        div22.appendChild(head21)
+                        let i2=document.createElement("i")
+                        i2.classList.add("fa-dollar-sign")
+                        head2.appendChild(i2)
+                        head21.innerHTML=i.price
+
+                        let div33=document.createElement("div")
+                        div33.classList.add("d-flex")
+                        div33.classList.add("flex-column")
+                        div33.classList.add("justify-item-center")
+                        div33.classList.add("align-items-center")
+                        div33.classList.add("gap-2")
+                        let btn=document.createElement("button")
+                        let btn1=document.createElement("button")
+                        div33.appendChild(btn)
+                        div33.appendChild(btn1)
+                        btn.textContent="Buy"
+                        btn.classList.add("btn")
+                        btn.classList.add("text-center")
+                        btn.classList.add("btn-secondary")
+                        btn.classList.add("w-75")
+                        btn1.textContent="Add to cart"
+                        btn1.classList.add("btn")
+                        btn1.classList.add("text-center")
+                        btn1.classList.add("btn-secondary")
+                        btn1.classList.add("w-75")
+
+
+                        d1.appendChild(d00)
+                        d00.appendChild(d01)
+                        d00.appendChild(d02)
+                        d01.appendChild(img)
+                        d02.appendChild(h3)
+                        d02.appendChild(div21)
+                        d02.appendChild(div22)
+                        d02.appendChild(p)
+                        d02.appendChild(div33)
+                    }
+                }
+            })
+            b3.addEventListener('click',()=>{
+                for(i of card){
+                    i.classList.add("d-none")
+                }
+                for(i of e){
+                    if(i.price>200 && i.price<=300){
+                        let h3=document.createElement("h3")
+                        let img=document.createElement("img")
+                        let d00=document.createElement("div")
+                        d00.classList.add("card1")
+                        d00.classList.add("border")
+                        d00.classList.add("p-2")
+                        d00.classList.add("row")
+                        let d01=document.createElement("div")
+                        d01.classList.add("col-md-4")
+                        let d02=document.createElement("div")
+                        let p=document.createElement("p")
+                        let div21=document.createElement("div")
+                        let rate=document.createElement("p")
+                        div21.appendChild(rate)
+                        rate.innerHTML=i.rating.rate
+                        div21.classList.add("d-flex")
+                        for(j=0;j<Math.round(i.rating.rate);j++){
+                            let i1=document.createElement("i")
+                            rate.appendChild(i1)
+                            i1.classList.add("fa")
+                            i1.classList.add("fa-star")
+                        }
+                        for(j=0;j<5-Math.round(i.rating["rate"]);j++){
+                            let i1=document.createElement("i")
+                            rate.appendChild(i1)
+                            i1.classList.add("fa")
+                            i1.classList.add("fa-star-o")
+                            // i1.classList.add("")
+                        }
+                        
+                        d02.classList.add("col-md-8")
+                        h3.innerHTML=i.title
+                        img.setAttribute("src",i.image)
+                        img.setAttribute("height","100%")
+                        img.setAttribute("width","100%")
+
+                        p.innerHTML=i.description
+                        p.classList.add("col-lg")
+                        let div22=document.createElement("div")
+                        div22.classList.add("d-flex")
+                        div22.classList.add("my-lg-5")
+                        div22.classList.add("my-md-3")
+                        let head2=document.createElement("h2")
+                        let head21=document.createElement("h2")
+                        div22.appendChild(head2)
+                        div22.appendChild(head21)
+                        let i2=document.createElement("i")
+                        i2.classList.add("fa-dollar-sign")
+                        head2.appendChild(i2)
+                        head21.innerHTML=i.price
+
+                        let div33=document.createElement("div")
+                        div33.classList.add("d-flex")
+                        div33.classList.add("flex-column")
+                        div33.classList.add("justify-item-center")
+                        div33.classList.add("align-items-center")
+                        div33.classList.add("gap-2")
+                        let btn=document.createElement("button")
+                        let btn1=document.createElement("button")
+                        div33.appendChild(btn)
+                        div33.appendChild(btn1)
+                        btn.textContent="Buy"
+                        btn.classList.add("btn")
+                        btn.classList.add("text-center")
+                        btn.classList.add("btn-secondary")
+                        btn.classList.add("w-75")
+                        btn1.textContent="Add to cart"
+                        btn1.classList.add("btn")
+                        btn1.classList.add("text-center")
+                        btn1.classList.add("btn-secondary")
+                        btn1.classList.add("w-75")
+
+
+                        d1.appendChild(d00)
+                        d00.appendChild(d01)
+                        d00.appendChild(d02)
+                        d01.appendChild(img)
+                        d02.appendChild(h3)
+                        d02.appendChild(div21)
+                        d02.appendChild(div22)
+                        d02.appendChild(p)
+                        d02.appendChild(div33)
+                    }
+                }
+            })
+            b4.addEventListener('click',()=>{
+                for(i of card){
+                    i.classList.add("d-none")
+                }
+                for(i of e){
+                    if(i.price>300 && i.price<=400){
+                        let h3=document.createElement("h3")
+                        let img=document.createElement("img")
+                        let d00=document.createElement("div")
+                        d00.classList.add("card1")
+                        d00.classList.add("border")
+                        d00.classList.add("p-2")
+                        d00.classList.add("row")
+                        let d01=document.createElement("div")
+                        d01.classList.add("col-md-4")
+                        let d02=document.createElement("div")
+                        let p=document.createElement("p")
+                        let div21=document.createElement("div")
+                        let rate=document.createElement("p")
+                        div21.appendChild(rate)
+                        rate.innerHTML=i.rating.rate
+                        div21.classList.add("d-flex")
+                        for(j=0;j<Math.round(i.rating.rate);j++){
+                            let i1=document.createElement("i")
+                            rate.appendChild(i1)
+                            i1.classList.add("fa")
+                            i1.classList.add("fa-star")
+                        }
+                        for(j=0;j<5-Math.round(i.rating["rate"]);j++){
+                            let i1=document.createElement("i")
+                            rate.appendChild(i1)
+                            i1.classList.add("fa")
+                            i1.classList.add("fa-star-o")
+                            // i1.classList.add("")
+                        }
+                        
+                        d02.classList.add("col-md-8")
+                        h3.innerHTML=i.title
+                        img.setAttribute("src",i.image)
+                        img.setAttribute("height","100%")
+                        img.setAttribute("width","100%")
+
+                        p.innerHTML=i.description
+                        p.classList.add("col-lg")
+                        let div22=document.createElement("div")
+                        div22.classList.add("d-flex")
+                        div22.classList.add("my-lg-5")
+                        div22.classList.add("my-md-3")
+                        let head2=document.createElement("h2")
+                        let head21=document.createElement("h2")
+                        div22.appendChild(head2)
+                        div22.appendChild(head21)
+                        let i2=document.createElement("i")
+                        i2.classList.add("fa-dollar-sign")
+                        head2.appendChild(i2)
+                        head21.innerHTML=i.price
+
+                        let div33=document.createElement("div")
+                        div33.classList.add("d-flex")
+                        div33.classList.add("flex-column")
+                        div33.classList.add("justify-item-center")
+                        div33.classList.add("align-items-center")
+                        div33.classList.add("gap-2")
+                        let btn=document.createElement("button")
+                        let btn1=document.createElement("button")
+                        div33.appendChild(btn)
+                        div33.appendChild(btn1)
+                        btn.textContent="Buy"
+                        btn.classList.add("btn")
+                        btn.classList.add("text-center")
+                        btn.classList.add("btn-secondary")
+                        btn.classList.add("w-75")
+                        btn1.textContent="Add to cart"
+                        btn1.classList.add("btn")
+                        btn1.classList.add("text-center")
+                        btn1.classList.add("btn-secondary")
+                        btn1.classList.add("w-75")
+
+
+                        d1.appendChild(d00)
+                        d00.appendChild(d01)
+                        d00.appendChild(d02)
+                        d01.appendChild(img)
+                        d02.appendChild(h3)
+                        d02.appendChild(div21)
+                        d02.appendChild(div22)
+                        d02.appendChild(p)
+                        d02.appendChild(div33)
+                    }
+                }
+            })
+            b5.addEventListener('click',()=>{
+                for(i of card){
+                    i.classList.add("d-none")
+                }
+                for(i of e){
+                    if(i.price>400 && i.price<=500){
+                        let h3=document.createElement("h3")
+                        let img=document.createElement("img")
+                        let d00=document.createElement("div")
+                        d00.classList.add("card1")
+                        d00.classList.add("border")
+                        d00.classList.add("p-2")
+                        d00.classList.add("row")
+                        let d01=document.createElement("div")
+                        d01.classList.add("col-md-4")
+                        let d02=document.createElement("div")
+                        let p=document.createElement("p")
+                        let div21=document.createElement("div")
+                        let rate=document.createElement("p")
+                        div21.appendChild(rate)
+                        rate.innerHTML=i.rating.rate
+                        div21.classList.add("d-flex")
+                        for(j=0;j<Math.round(i.rating.rate);j++){
+                            let i1=document.createElement("i")
+                            rate.appendChild(i1)
+                            i1.classList.add("fa")
+                            i1.classList.add("fa-star")
+                        }
+                        for(j=0;j<5-Math.round(i.rating["rate"]);j++){
+                            let i1=document.createElement("i")
+                            rate.appendChild(i1)
+                            i1.classList.add("fa")
+                            i1.classList.add("fa-star-o")
+                            // i1.classList.add("")
+                        }
+                        
+                        d02.classList.add("col-md-8")
+                        h3.innerHTML=i.title
+                        img.setAttribute("src",i.image)
+                        img.setAttribute("height","100%")
+                        img.setAttribute("width","100%")
+
+                        p.innerHTML=i.description
+                        p.classList.add("col-lg")
+                        let div22=document.createElement("div")
+                        div22.classList.add("d-flex")
+                        div22.classList.add("my-lg-5")
+                        div22.classList.add("my-md-3")
+                        let head2=document.createElement("h2")
+                        let head21=document.createElement("h2")
+                        div22.appendChild(head2)
+                        div22.appendChild(head21)
+                        let i2=document.createElement("i")
+                        i2.classList.add("fa-dollar-sign")
+                        head2.appendChild(i2)
+                        head21.innerHTML=i.price
+
+                        let div33=document.createElement("div")
+                        div33.classList.add("d-flex")
+                        div33.classList.add("flex-column")
+                        div33.classList.add("justify-item-center")
+                        div33.classList.add("align-items-center")
+                        div33.classList.add("gap-2")
+                        let btn=document.createElement("button")
+                        let btn1=document.createElement("button")
+                        div33.appendChild(btn)
+                        div33.appendChild(btn1)
+                        btn.textContent="Buy"
+                        btn.classList.add("btn")
+                        btn.classList.add("text-center")
+                        btn.classList.add("btn-secondary")
+                        btn.classList.add("w-75")
+                        btn1.textContent="Add to cart"
+                        btn1.classList.add("btn")
+                        btn1.classList.add("text-center")
+                        btn1.classList.add("btn-secondary")
+                        btn1.classList.add("w-75")
+
+
+                        d1.appendChild(d00)
+                        d00.appendChild(d01)
+                        d00.appendChild(d02)
+                        d01.appendChild(img)
+                        d02.appendChild(h3)
+                        d02.appendChild(div21)
+                        d02.appendChild(div22)
+                        d02.appendChild(p)
+                        d02.appendChild(div33)
+                    }
+                }
+            })
+            b6.addEventListener('click',()=>{
+                for(i of card){
+                    i.classList.add("d-none")
+                }
+                for(i of e){
+                    if(i.price>500){
+                        let h3=document.createElement("h3")
+                        let img=document.createElement("img")
+                        let d00=document.createElement("div")
+                        d00.classList.add("card1")
+                        d00.classList.add("border")
+                        d00.classList.add("p-2")
+                        d00.classList.add("row")
+                        let d01=document.createElement("div")
+                        d01.classList.add("col-md-4")
+                        let d02=document.createElement("div")
+                        let p=document.createElement("p")
+                        let div21=document.createElement("div")
+                        let rate=document.createElement("p")
+                        div21.appendChild(rate)
+                        rate.innerHTML=i.rating.rate
+                        div21.classList.add("d-flex")
+                        for(j=0;j<Math.round(i.rating.rate);j++){
+                            let i1=document.createElement("i")
+                            rate.appendChild(i1)
+                            i1.classList.add("fa")
+                            i1.classList.add("fa-star")
+                        }
+                        for(j=0;j<5-Math.round(i.rating["rate"]);j++){
+                            let i1=document.createElement("i")
+                            rate.appendChild(i1)
+                            i1.classList.add("fa")
+                            i1.classList.add("fa-star-o")
+                            // i1.classList.add("")
+                        }
+                        
+                        d02.classList.add("col-md-8")
+                        h3.innerHTML=i.title
+                        img.setAttribute("src",i.image)
+                        img.setAttribute("height","100%")
+                        img.setAttribute("width","100%")
+
+                        p.innerHTML=i.description
+                        p.classList.add("col-lg")
+                        let div22=document.createElement("div")
+                        div22.classList.add("d-flex")
+                        div22.classList.add("my-lg-5")
+                        div22.classList.add("my-md-3")
+                        let head2=document.createElement("h2")
+                        let head21=document.createElement("h2")
+                        div22.appendChild(head2)
+                        div22.appendChild(head21)
+                        let i2=document.createElement("i")
+                        i2.classList.add("fa-dollar-sign")
+                        head2.appendChild(i2)
+                        head21.innerHTML=i.price
+
+                        let div33=document.createElement("div")
+                        div33.classList.add("d-flex")
+                        div33.classList.add("flex-column")
+                        div33.classList.add("justify-item-center")
+                        div33.classList.add("align-items-center")
+                        div33.classList.add("gap-2")
+                        let btn=document.createElement("button")
+                        let btn1=document.createElement("button")
+                        div33.appendChild(btn)
+                        div33.appendChild(btn1)
+                        btn.textContent="Buy"
+                        btn.classList.add("btn")
+                        btn.classList.add("text-center")
+                        btn.classList.add("btn-secondary")
+                        btn.classList.add("w-75")
+                        btn1.textContent="Add to cart"
+                        btn1.classList.add("btn")
+                        btn1.classList.add("text-center")
+                        btn1.classList.add("btn-secondary")
+                        btn1.classList.add("w-75")
+
+
+                        d1.appendChild(d00)
+                        d00.appendChild(d01)
+                        d00.appendChild(d02)
+                        d01.appendChild(img)
+                        d02.appendChild(h3)
+                        d02.appendChild(div21)
+                        d02.appendChild(div22)
+                        d02.appendChild(p)
+                        d02.appendChild(div33)
+                    }
+                }
+            })
+            
+
+           
+        }))
+    </script>
+    <script
+    src="https://kit.fontawesome.com/7f1a9230de.js"
+    crossorigin="anonymous"
+  ></script>
+</body>
+</html>
