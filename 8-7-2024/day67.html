@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Hello World</h2>
+    <button type="submit">Submit</button>
+    <script>
+        
+        let h2=document.getElementsByTagName("h2")[0];
+        let bt=document.getElementsByTagName("button")[0];
+        bt.addEventListener("click",demo)
+        function demo(){
+            let clr=Math.floor(Math.random()*1000000)
+            let clr1=Math.floor(Math.random()*1000000)
+            h2.style.backgroundColor="#"+clr
+            h2.style.color="#"+clr1
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <legend>Chect Whether the Number is Even or Odd</legend>
+        <label for="ip1">Enter Number:</label>
+        <input type="number" id="ip1">
+        <button type="submit">Submit</button>
+    </form>
+    <script defer> 
+        let ip1=document.getElementById("ip1")
+        let bt=document.getElementsByTagName("button")[0];
+        bt.addEventListener("click",isEven)
+        function isEven(e){
+            e.preventDefault()
+            let h2=document.createElement("h2")
+            if(ip1.value%2==0){
+                h2.innerHTML=`${ip1.value} is a Even Number`
+            }
+            else{
+                h2.textContent=`${ip1.value} is a Odd Number`
+            }
+
+            document.body.appendChild(h2)
+        }
+    </script>
+</body>
+</html>

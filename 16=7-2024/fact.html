@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <legend>Factorial of Number</legend>
+        <label for="ip1">Enter a Number</label>
+        <input type="number" id="ip1">
+        <button type="submit">Sumbit</button>
+        <h2></h2>
+    </form>
+    <script>
+        var ip1=document.getElementById("ip1");
+        let bt=document.getElementsByTagName("button")[0]
+        let h2=document.getElementsByTagName("h2")[0];
+        bt.addEventListener('click',fact)
+        function fact(e){
+            e.preventDefault()
+            t=1
+            for(i=1;i<=ip1.value;i++){
+                t=t*i;
+            }
+            h2.innerHTML=`${t} is a factorial of ${ip1.value}`;
+        }
+        
+    </script>
+</body>
+</html>
